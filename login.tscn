@@ -1,0 +1,149 @@
+[gd_scene load_steps=11 format=3 uid="uid://clewcvaugtf1d"]
+
+[ext_resource type="Script" path="res://Scripts/login.gd" id="1_ypwye"]
+[ext_resource type="Texture2D" uid="uid://tdotsof8n4su" path="res://Recursos/Fondos/Cyber.jpg" id="2_2aqbx"]
+[ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="2_w2ija"]
+[ext_resource type="Texture2D" uid="uid://cijakey6xt5in" path="res://Recursos/Fondos/5c1cd2237f4b43db7780df6fa7fe6770.jpg" id="3_vmhth"]
+[ext_resource type="FontFile" uid="uid://h0lcg2ndmnti" path="res://Recursos/fuentes/Kenney Blocks.ttf" id="4_04i6g"]
+[ext_resource type="FontFile" uid="uid://diw0h42sk6n42" path="res://Recursos/fuentes/Kenney Future.ttf" id="5_ueaj3"]
+[ext_resource type="Texture2D" uid="uid://b6iy2lusxx84b" path="res://Recursos/Botones/button (1).png" id="6_lifrl"]
+[ext_resource type="Texture2D" uid="uid://cxslxtqha5xkb" path="res://Recursos/Botones/button (3).png" id="8_5tcrb"]
+[ext_resource type="AudioStream" uid="uid://5y4vebiccrei" path="res://Recursos/audio/[OST] Super Mario Maker - Title Screen.mp3" id="8_8llh0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gakb8"]
+font = ExtResource("4_04i6g")
+font_size = 36
+font_color = Color(0.992157, 0.796078, 0.431373, 1)
+outline_size = 46
+outline_color = Color(0.454902, 0.72549, 1, 1)
+
+[node name="Login" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ypwye")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 1024.0
+offset_bottom = 1536.0
+scale = Vector2(0.702149, 0.833342)
+texture = ExtResource("2_w2ija")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -316.0
+offset_right = 1039.0
+offset_bottom = 1176.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.452482, 0.452482)
+texture = ExtResource("3_vmhth")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+modulate = Color(0.593, 0.867, 0.902, 0.184)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = -317.0
+offset_right = 1041.0
+offset_bottom = 1175.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.452482, 0.452482)
+texture = ExtResource("2_2aqbx")
+
+[node name="user_edit" type="LineEdit" parent="TextureRect"]
+layout_mode = 0
+offset_left = 365.656
+offset_top = 691.395
+offset_right = 670.656
+offset_bottom = 763.395
+theme_override_fonts/font = ExtResource("5_ueaj3")
+theme_override_font_sizes/font_size = 20
+
+[node name="Label2" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 383.656
+offset_top = 788.395
+offset_right = 653.656
+offset_bottom = 845.395
+text = "Contraseña"
+label_settings = SubResource("LabelSettings_gakb8")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 416.656
+offset_top = 621.395
+offset_right = 614.656
+offset_bottom = 678.395
+text = "USUARIO"
+label_settings = SubResource("LabelSettings_gakb8")
+
+[node name="pass_edit" type="LineEdit" parent="TextureRect"]
+layout_mode = 0
+offset_left = 368.656
+offset_top = 869.395
+offset_right = 673.656
+offset_bottom = 941.395
+secret = true
+
+[node name="Label3" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 388.656
+offset_top = 476.395
+offset_right = 658.656
+offset_bottom = 533.395
+text = "BIENVENIDO"
+label_settings = SubResource("LabelSettings_gakb8")
+
+[node name="LoginButton" type="Button" parent="TextureRect"]
+modulate = Color(0, 1.002, 1, 1)
+layout_mode = 0
+offset_left = 344.656
+offset_top = 955.395
+offset_right = 695.656
+offset_bottom = 1015.4
+icon = ExtResource("6_lifrl")
+
+[node name="RegisterButton" type="Button" parent="TextureRect"]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 0
+offset_left = 344.656
+offset_top = 1036.4
+offset_right = 695.656
+offset_bottom = 1096.4
+icon = ExtResource("8_5tcrb")
+
+[node name="error_label" type="Label" parent="TextureRect"]
+visible = false
+layout_mode = 0
+offset_left = 141.0
+offset_top = 602.0
+offset_right = 571.0
+offset_bottom = 760.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8llh0")
+volume_db = -22.516
+autoplay = true
+parameters/looping = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="TextureRect/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="TextureRect/RegisterButton" to="." method="_on_register_button_pressed"]

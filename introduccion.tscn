@@ -1,0 +1,116 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqrr3ju4lwhw8"]
+
+[ext_resource type="Script" path="res://introduccion.gd" id="1_i5qri"]
+[ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="2_b2jvo"]
+[ext_resource type="Texture2D" uid="uid://cb5p51mjjgwyn" path="res://Recursos/Fondos/pfondo.png" id="3_v2uvk"]
+[ext_resource type="Texture2D" uid="uid://ctua08krldxx5" path="res://Recursos/Botones/botonopciones.png" id="4_dighm"]
+[ext_resource type="FontFile" uid="uid://bwby7vm3wtajy" path="res://Recursos/fuentes/Kenney Mini Square.ttf" id="4_ypl0d"]
+[ext_resource type="FontFile" uid="uid://cliiiv5hwj3iw" path="res://Recursos/fuentes/Kenney Mini Square Mono.ttf" id="5_84uso"]
+[ext_resource type="AudioStream" uid="uid://m1orpomh1kto" path="res://Recursos/audio/Donkey Kong 64 Welcome to Bonus Stage HD.mp3" id="7_rc4i6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_snmhb"]
+font = ExtResource("4_ypl0d")
+font_size = 35
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Introduccion" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i5qri")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 303.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.703999, 0.83222)
+texture = ExtResource("2_b2jvo")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 127.0
+offset_right = 693.0
+offset_bottom = 427.0
+texture = ExtResource("3_v2uvk")
+
+[node name="Label" type="Label" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 636.0
+offset_bottom = 298.0
+label_settings = SubResource("LabelSettings_snmhb")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 451.0
+offset_right = 692.0
+offset_bottom = 751.0
+texture = ExtResource("3_v2uvk")
+
+[node name="Label" type="Label" parent="TextureRect3"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 636.0
+offset_bottom = 291.0
+label_settings = SubResource("LabelSettings_snmhb")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 778.0
+offset_right = 693.0
+offset_bottom = 1078.0
+texture = ExtResource("3_v2uvk")
+
+[node name="Label" type="Label" parent="TextureRect4"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 635.0
+offset_bottom = 291.0
+label_settings = SubResource("LabelSettings_snmhb")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BotonContinuar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 1133.0
+offset_right = 503.0
+offset_bottom = 1259.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_84uso")
+theme_override_font_sizes/font_size = 30
+text = "CONTINUAR"
+icon = ExtResource("4_dighm")
+autowrap_mode = 2
+icon_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_rc4i6")
+volume_db = -24.143
+autoplay = true

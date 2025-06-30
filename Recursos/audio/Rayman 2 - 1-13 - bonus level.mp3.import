@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dlrfhdbmgi5yb"
+path="res://.godot/imported/Rayman 2 - 1-13 - bonus level.mp3-35f41347138f312e037944bcd6823096.mp3str"
+
+[deps]
+
+source_file="res://Recursos/audio/Rayman 2 - 1-13 - bonus level.mp3"
+dest_files=["res://.godot/imported/Rayman 2 - 1-13 - bonus level.mp3-35f41347138f312e037944bcd6823096.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://dcew6x5gjxhvt"]
+
+[ext_resource type="Script" path="res://preguntasmodulos.gd" id="1_155ea"]
+[ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="1_vt4us"]
+[ext_resource type="Texture2D" uid="uid://ch6eunec34cd6" path="res://Recursos/Botones/MODULOS/m1.png" id="2_11efl"]
+[ext_resource type="Texture2D" uid="uid://cpwpbh3ea2pk8" path="res://Recursos/Botones/MODULOS/m2.png" id="3_p3yx5"]
+[ext_resource type="Texture2D" uid="uid://8saf4s0cqued" path="res://Recursos/Botones/MODULOS/m3.png" id="4_o4qjp"]
+[ext_resource type="Texture2D" uid="uid://2yygrs5kl7wy" path="res://Recursos/Botones/MODULOS/m4.png" id="5_onl0u"]
+[ext_resource type="Texture2D" uid="uid://ba6wwfxdgnxrg" path="res://Recursos/Botones/MODULOS/m5.png" id="6_lg0eq"]
+[ext_resource type="Texture2D" uid="uid://bhsbu7k4ghbwm" path="res://Recursos/Botones/MODULOS/m6.png" id="7_v0y5j"]
+[ext_resource type="Texture2D" uid="uid://mc35v0xwj6hf" path="res://Recursos/Botones/MODULOS/m7 (1).png" id="8_3dwd2"]
+[ext_resource type="Texture2D" uid="uid://bv76bg21kp3it" path="res://Recursos/Botones/MODULOS/m8.png" id="9_t8lpw"]
+[ext_resource type="AudioStream" uid="uid://dlrfhdbmgi5yb" path="res://Recursos/audio/Rayman 2 - 1-13 - bonus level.mp3" id="11_12set"]
+
+[node name="PREGUNTASMODULOS" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_155ea")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 303.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.703999, 0.83222)
+texture = ExtResource("1_vt4us")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 205.0
+offset_right = 678.0
+offset_bottom = 1108.0
+theme_override_constants/h_separation = 57
+theme_override_constants/v_separation = 133
+columns = 2
+
+[node name="BotonModulo1" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("2_11efl")
+
+[node name="BotonModulo2" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("3_p3yx5")
+
+[node name="BotonModulo3" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("4_o4qjp")
+
+[node name="BotonModulo4" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("5_onl0u")
+
+[node name="BotonModulo5" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("6_lg0eq")
+
+[node name="BotonModulo6" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("7_v0y5j")
+
+[node name="BotonModulo7" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("8_3dwd2")
+
+[node name="BotonModulo8" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("9_t8lpw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_12set")
+volume_db = -20.429
+autoplay = true

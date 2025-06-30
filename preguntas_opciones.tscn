@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwqaljfvwsbe7"]
+
+[ext_resource type="Script" path="res://preguntas_opciones.gd" id="1_b1pne"]
+[ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="2_e503p"]
+[ext_resource type="FontFile" uid="uid://cliiiv5hwj3iw" path="res://Recursos/fuentes/Kenney Mini Square Mono.ttf" id="3_pdw37"]
+[ext_resource type="Texture2D" uid="uid://ctua08krldxx5" path="res://Recursos/Botones/botonopciones.png" id="4_r4qrg"]
+[ext_resource type="Texture2D" uid="uid://cb5p51mjjgwyn" path="res://Recursos/Fondos/pfondo.png" id="5_ppagg"]
+[ext_resource type="AudioStream" uid="uid://dyohrveywddj6" path="res://Recursos/audio/Flat Zone 2  Super Smash Bros. Ultimate  Game & Watch Series Music.mp3" id="6_5sccr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k4stl"]
+font = ExtResource("3_pdw37")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eo0od"]
+font = ExtResource("3_pdw37")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="PreguntasOpciones" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b1pne")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 303.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.703999, 0.83222)
+texture = ExtResource("2_e503p")
+
+[node name="FeedbackLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 288.0
+offset_right = 623.0
+offset_bottom = 472.0
+label_settings = SubResource("LabelSettings_k4stl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="FeedbackLabel"]
+layout_mode = 0
+offset_left = -61.0
+offset_top = -2.0
+offset_right = 525.0
+offset_bottom = 236.0
+texture = ExtResource("5_ppagg")
+
+[node name="PreguntaLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 315.0
+offset_right = 662.0
+offset_bottom = 492.0
+label_settings = SubResource("LabelSettings_eo0od")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 574.0
+offset_right = 435.0
+offset_bottom = 1177.0
+scale = Vector2(1.46626, 1.0169)
+theme_override_constants/separation = 33
+
+[node name="Opcion1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.160784, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_pdw37")
+theme_override_font_sizes/font_size = 20
+icon = ExtResource("4_r4qrg")
+autowrap_mode = 2
+icon_alignment = 1
+
+[node name="Opcion2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.160784, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_pdw37")
+theme_override_font_sizes/font_size = 20
+icon = ExtResource("4_r4qrg")
+autowrap_mode = 2
+icon_alignment = 1
+
+[node name="Opcion3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.160784, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_pdw37")
+theme_override_font_sizes/font_size = 20
+icon = ExtResource("4_r4qrg")
+autowrap_mode = 2
+icon_alignment = 1
+
+[node name="Opcion4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.160784, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_pdw37")
+theme_override_font_sizes/font_size = 20
+icon = ExtResource("4_r4qrg")
+autowrap_mode = 2
+icon_alignment = 1
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5sccr")
+volume_db = -10.214
+autoplay = true

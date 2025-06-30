@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qx3o42ogxy3a"
+path="res://.godot/imported/Donkey Kong Country OST (Super Nintendo) - Track 0123 - Theme.mp3-6ec869fa7dcc6435a84813162b3efadb.mp3str"
+
+[deps]
+
+source_file="res://Recursos/audio/Donkey Kong Country OST (Super Nintendo) - Track 0123 - Theme.mp3"
+dest_files=["res://.godot/imported/Donkey Kong Country OST (Super Nintendo) - Track 0123 - Theme.mp3-6ec869fa7dcc6435a84813162b3efadb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
