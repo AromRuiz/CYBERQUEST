@@ -1,13 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0xce73amgrq3"]
+[gd_scene load_steps=22 format=3 uid="uid://c0xce73amgrq3"]
 
 [ext_resource type="Script" path="res://interfaz_pre_juego.gd" id="1_4m82r"]
 [ext_resource type="Texture2D" uid="uid://blb7wh6aw5cmi" path="res://Recursos/sprites/9432df3a-1675-4824-9fa8-78f755dcd038.png" id="2_1k0yh"]
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="2_70ovk"]
 [ext_resource type="FontFile" uid="uid://bwby7vm3wtajy" path="res://Recursos/fuentes/Kenney Mini Square.ttf" id="4_vj1mc"]
-[ext_resource type="Texture2D" uid="uid://ctua08krldxx5" path="res://Recursos/Botones/botonopciones.png" id="5_q8sej"]
+[ext_resource type="Texture2D" uid="uid://tbsnwh05l8fo" path="res://Recursos/Botones/BO/boton_empezar.png" id="5_4jpn3"]
 [ext_resource type="FontFile" uid="uid://b5004m857mone" path="res://Recursos/fuentes/Kenney Pixel Square.ttf" id="6_g2mgm"]
 [ext_resource type="FontFile" uid="uid://h0lcg2ndmnti" path="res://Recursos/fuentes/Kenney Blocks.ttf" id="7_tt3lb"]
 [ext_resource type="AudioStream" uid="uid://3iu2ouhpn36t" path="res://Recursos/audio/Super Mario 64 Soundtrack - Dire, Dire Docks.mp3" id="8_ox1wb"]
+[ext_resource type="Texture2D" uid="uid://dgqjtxujgq4ip" path="res://Recursos/Botones/BO/ranbutton.png" id="8_wdbyd"]
 
 [sub_resource type="Animation" id="Animation_c5sjv"]
 resource_name = "PC"
@@ -96,11 +97,133 @@ _data = {
 "RESET": SubResource("Animation_3ailk")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_836o2"]
+atlas = ExtResource("2_1k0yh")
+region = Rect2(0, 0, 341, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqg8q"]
+atlas = ExtResource("2_1k0yh")
+region = Rect2(0, 512, 341, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxki6"]
+atlas = ExtResource("2_1k0yh")
+region = Rect2(682, 512, 341, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me748"]
+atlas = ExtResource("2_1k0yh")
+region = Rect2(682, 0, 341, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bewfx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_836o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqg8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxki6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me748")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [sub_resource type="LabelSettings" id="LabelSettings_d7khu"]
 font = ExtResource("6_g2mgm")
 font_size = 29
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_oonrm"]
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BotonTabla:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(277, 126), Vector2(295, 134)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BotonTabla:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 137), Vector2(-7, 133)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BotonTabla:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5qxx4"]
+resource_name = "rankingboton"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BotonTabla:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(277, 126), Vector2(247, 108)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BotonTabla:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(2, 137), Vector2(17, 146)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BotonTabla:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_85d15"]
+_data = {
+"RESET": SubResource("Animation_oonrm"),
+"rankingboton": SubResource("Animation_5qxx4")
+}
 
 [node name="InterfazPreJuego" type="Control"]
 layout_mode = 3
@@ -119,6 +242,7 @@ scale = Vector2(0.703116, 0.832955)
 texture = ExtResource("2_70ovk")
 
 [node name="Sprite2D" type="Sprite2D" parent="TextureRect"]
+visible = false
 position = Vector2(372, 580)
 scale = Vector2(1, 0.822266)
 texture = ExtResource("2_1k0yh")
@@ -132,20 +256,28 @@ libraries = {
 }
 autoplay = "PC"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
+position = Vector2(530.496, 734.734)
+sprite_frames = SubResource("SpriteFrames_bewfx")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+
 [node name="Empezar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 208.0
-offset_top = 944.0
-offset_right = 485.0
-offset_bottom = 1070.0
+offset_left = 171.0
+offset_top = 923.0
+offset_right = 522.0
+offset_bottom = 1091.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_vj1mc")
 theme_override_font_sizes/font_size = 25
-text = "EMPEZAR"
-icon = ExtResource("5_q8sej")
+icon = ExtResource("5_4jpn3")
+flat = true
 icon_alignment = 1
+expand_icon = true
 
 [node name="LabelPuntaje" type="Label" parent="."]
 layout_mode = 0
@@ -164,14 +296,21 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("7_tt3lb")
 theme_override_font_sizes/font_size = 40
-text = "RANKING"
-icon = ExtResource("5_q8sej")
+icon = ExtResource("8_wdbyd")
+flat = true
 icon_alignment = 1
+expand_icon = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_ox1wb")
 autoplay = true
 parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_85d15")
+}
+autoplay = "RESET"
 
 [connection signal="pressed" from="Empezar" to="." method="_on_empezar_pressed"]
 [connection signal="pressed" from="BotonTabla" to="." method="_on_boton_tabla_pressed"]

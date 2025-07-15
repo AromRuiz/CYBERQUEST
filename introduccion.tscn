@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqrr3ju4lwhw8"]
+[gd_scene load_steps=12 format=3 uid="uid://dqrr3ju4lwhw8"]
 
 [ext_resource type="Script" path="res://introduccion.gd" id="1_i5qri"]
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="2_b2jvo"]
-[ext_resource type="Texture2D" uid="uid://cb5p51mjjgwyn" path="res://Recursos/Fondos/pfondo.png" id="3_v2uvk"]
-[ext_resource type="Texture2D" uid="uid://ctua08krldxx5" path="res://Recursos/Botones/botonopciones.png" id="4_dighm"]
+[ext_resource type="Texture2D" uid="uid://dhldt0rxilpdx" path="res://Recursos/Fondos/newintrod.png" id="3_y2rba"]
 [ext_resource type="FontFile" uid="uid://bwby7vm3wtajy" path="res://Recursos/fuentes/Kenney Mini Square.ttf" id="4_ypl0d"]
 [ext_resource type="FontFile" uid="uid://cliiiv5hwj3iw" path="res://Recursos/fuentes/Kenney Mini Square Mono.ttf" id="5_84uso"]
+[ext_resource type="Texture2D" uid="uid://dsatpet5qt1am" path="res://Recursos/Botones/continuarb.png" id="6_r7ply"]
 [ext_resource type="AudioStream" uid="uid://m1orpomh1kto" path="res://Recursos/audio/Donkey Kong 64 Welcome to Bonus Stage HD.mp3" id="7_rc4i6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_snmhb"]
@@ -13,6 +13,67 @@ font = ExtResource("4_ypl0d")
 font_size = 35
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_gbo8j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(277, 126)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(226, 1161)]
+}
+
+[sub_resource type="Animation" id="Animation_ty02k"]
+resource_name = "button"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(277, 126), Vector2(489, 218)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(226, 1161), Vector2(120, 1085)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kikoj"]
+_data = {
+"RESET": SubResource("Animation_gbo8j"),
+"button": SubResource("Animation_ty02k")
+}
 
 [node name="Introduccion" type="Control"]
 layout_mode = 3
@@ -39,18 +100,19 @@ texture = ExtResource("2_b2jvo")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 127.0
-offset_right = 693.0
-offset_bottom = 427.0
-texture = ExtResource("3_v2uvk")
+offset_left = -6.0
+offset_top = 94.0
+offset_right = 736.0
+offset_bottom = 414.0
+texture = ExtResource("3_y2rba")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="TextureRect2"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 3.0
-offset_right = 636.0
-offset_bottom = 298.0
+offset_left = 77.0
+offset_top = 62.0
+offset_right = 665.0
+offset_bottom = 255.0
 label_settings = SubResource("LabelSettings_snmhb")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -58,18 +120,19 @@ autowrap_mode = 2
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 451.0
-offset_right = 692.0
-offset_bottom = 751.0
-texture = ExtResource("3_v2uvk")
+offset_left = -8.0
+offset_top = 403.0
+offset_right = 736.0
+offset_bottom = 773.0
+texture = ExtResource("3_y2rba")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="TextureRect3"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 6.0
-offset_right = 636.0
-offset_bottom = 291.0
+offset_left = 82.0
+offset_top = 74.0
+offset_right = 653.0
+offset_bottom = 295.0
 label_settings = SubResource("LabelSettings_snmhb")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -77,18 +140,19 @@ autowrap_mode = 2
 
 [node name="TextureRect4" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 778.0
-offset_right = 693.0
-offset_bottom = 1078.0
-texture = ExtResource("3_v2uvk")
+offset_left = -13.0
+offset_top = 755.0
+offset_right = 737.0
+offset_bottom = 1147.0
+texture = ExtResource("3_y2rba")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="TextureRect4"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 635.0
-offset_bottom = 291.0
+offset_left = 84.0
+offset_top = 85.0
+offset_right = 663.0
+offset_bottom = 321.0
 label_settings = SubResource("LabelSettings_snmhb")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -96,19 +160,27 @@ autowrap_mode = 2
 
 [node name="BotonContinuar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 226.0
-offset_top = 1133.0
-offset_right = 503.0
-offset_bottom = 1259.0
+offset_left = 120.0
+offset_top = 1085.0
+offset_right = 609.0
+offset_bottom = 1303.0
+pivot_offset = Vector2(138.5, 63)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_84uso")
 theme_override_font_sizes/font_size = 30
-text = "CONTINUAR"
-icon = ExtResource("4_dighm")
+icon = ExtResource("6_r7ply")
+flat = true
 autowrap_mode = 2
 icon_alignment = 1
+expand_icon = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BotonContinuar"]
+libraries = {
+"": SubResource("AnimationLibrary_kikoj")
+}
+autoplay = "button"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_rc4i6")

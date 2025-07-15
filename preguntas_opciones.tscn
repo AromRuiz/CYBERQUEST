@@ -1,11 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwqaljfvwsbe7"]
+[gd_scene load_steps=19 format=3 uid="uid://bwqaljfvwsbe7"]
 
 [ext_resource type="Script" path="res://preguntas_opciones.gd" id="1_b1pne"]
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="2_e503p"]
 [ext_resource type="FontFile" uid="uid://cliiiv5hwj3iw" path="res://Recursos/fuentes/Kenney Mini Square Mono.ttf" id="3_pdw37"]
-[ext_resource type="Texture2D" uid="uid://ctua08krldxx5" path="res://Recursos/Botones/botonopciones.png" id="4_r4qrg"]
-[ext_resource type="Texture2D" uid="uid://cb5p51mjjgwyn" path="res://Recursos/Fondos/pfondo.png" id="5_ppagg"]
+[ext_resource type="Texture2D" uid="uid://c7nbg4m1yle3a" path="res://Recursos/Fondos/pbd.png" id="4_03pnn"]
+[ext_resource type="FontFile" uid="uid://c7168u6k4c7jj" path="res://Recursos/fuentes/kirifont/KiriFont.otf" id="5_gdh2u"]
+[ext_resource type="Texture2D" uid="uid://dxc4gmiamfh4u" path="res://Recursos/sprites/ondas.png" id="5_y87an"]
 [ext_resource type="AudioStream" uid="uid://dyohrveywddj6" path="res://Recursos/audio/Flat Zone 2  Super Smash Bros. Ultimate  Game & Watch Series Music.mp3" id="6_5sccr"]
+[ext_resource type="Texture2D" uid="uid://2y41j6ltqchf" path="res://Recursos/Botones/BO/bo1.png" id="6_lk4a7"]
+[ext_resource type="Texture2D" uid="uid://bgfu3eywa3rk4" path="res://Recursos/Botones/BO/BO2.png" id="7_5sxvg"]
+[ext_resource type="FontFile" uid="uid://dytmmui3r1ad4" path="res://Recursos/fuentes/kirifont/KiriFont.ttf" id="7_x1dt8"]
+[ext_resource type="Texture2D" uid="uid://lxlp1o324wuh" path="res://Recursos/Botones/BO/BO3.png" id="8_lprw3"]
+[ext_resource type="Texture2D" uid="uid://bun2b6bohfwlk" path="res://Recursos/Botones/BO/BO4.png" id="9_cx030"]
+[ext_resource type="PackedScene" uid="uid://cwdki8uit2i1s" path="res://barraprogreso.tscn" id="13_dsdp6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_k4stl"]
 font = ExtResource("3_pdw37")
@@ -13,9 +20,192 @@ font_size = 30
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_eo0od"]
-font = ExtResource("3_pdw37")
+line_spacing = 20.0
+font = ExtResource("5_gdh2u")
 font_size = 30
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_h0dm8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(118, 347)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.508902, 0.475728)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(730, 347)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.508902, 0.511487)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D2:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-194, -88)]
+}
+
+[sub_resource type="Animation" id="Animation_g2b5i"]
+resource_name = "ondas"
+length = 0.3333
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(118, 347), Vector2(107.117, 366.543), Vector2(107.117, 366.543)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.508902, 0.475728), Vector2(0.508902, 0.6929), Vector2(0.508902, 0.6929)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(730, 347), Vector2(739.96, 364.639), Vector2(739.96, 364.639)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.508902, 0.511487), Vector2(0.508902, 0.708157), Vector2(0.508902, 0.708157)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.3333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-194, -88), Vector2(-194, -101), Vector2(-194, -88), Vector2(-194, -71)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q0dgc"]
+_data = {
+"RESET": SubResource("Animation_h0dm8"),
+"ondas": SubResource("Animation_g2b5i")
+}
 
 [node name="PreguntasOpciones" type="Control"]
 layout_mode = 3
@@ -40,6 +230,10 @@ grow_vertical = 2
 scale = Vector2(0.703999, 0.83222)
 texture = ExtResource("2_e503p")
 
+[node name="barraprogreso" parent="." instance=ExtResource("13_dsdp6")]
+layout_mode = 1
+offset_bottom = -1034.0
+
 [node name="FeedbackLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 132.0
@@ -52,73 +246,99 @@ vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="FeedbackLabel"]
 layout_mode = 0
-offset_left = -61.0
-offset_top = -2.0
-offset_right = 525.0
-offset_bottom = 236.0
-texture = ExtResource("5_ppagg")
+offset_left = -194.0
+offset_top = -88.0
+offset_right = 676.0
+offset_bottom = 285.0
+texture = ExtResource("4_03pnn")
+expand_mode = 1
 
-[node name="PreguntaLabel" type="Label" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="FeedbackLabel/TextureRect"]
+position = Vector2(118, 347)
+rotation = 0.508097
+scale = Vector2(0.508902, 0.475728)
+texture = ExtResource("5_y87an")
+hframes = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="FeedbackLabel/TextureRect"]
+position = Vector2(730, 347)
+rotation = -0.514024
+scale = Vector2(0.508902, 0.511487)
+texture = ExtResource("5_y87an")
+hframes = 2
+
+[node name="PreguntaLabel" type="Label" parent="FeedbackLabel/TextureRect"]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 315.0
-offset_right = 662.0
-offset_bottom = 492.0
+offset_left = 171.0
+offset_top = 109.0
+offset_right = 679.0
+offset_bottom = 281.0
 label_settings = SubResource("LabelSettings_eo0od")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FeedbackLabel/TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_q0dgc")
+}
+autoplay = "ondas"
+speed_scale = 0.5
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 158.0
-offset_top = 574.0
-offset_right = 435.0
-offset_bottom = 1177.0
-scale = Vector2(1.46626, 1.0169)
+offset_left = 110.0
+offset_top = 589.0
+offset_right = 698.0
+offset_bottom = 1592.0
+scale = Vector2(0.892018, 0.618644)
 theme_override_constants/separation = 33
 
 [node name="Opcion1" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.160784, 0, 1, 1)
+theme_override_colors/font_color = Color(0.79238, 0.850209, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("3_pdw37")
+theme_override_fonts/font = ExtResource("7_x1dt8")
 theme_override_font_sizes/font_size = 20
-icon = ExtResource("4_r4qrg")
+icon = ExtResource("6_lk4a7")
+flat = true
 autowrap_mode = 2
 icon_alignment = 1
 
 [node name="Opcion2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.160784, 0, 1, 1)
+theme_override_colors/font_color = Color(0.79238, 0.850209, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("3_pdw37")
+theme_override_fonts/font = ExtResource("7_x1dt8")
 theme_override_font_sizes/font_size = 20
-icon = ExtResource("4_r4qrg")
+icon = ExtResource("7_5sxvg")
+flat = true
 autowrap_mode = 2
 icon_alignment = 1
 
 [node name="Opcion3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.160784, 0, 1, 1)
+theme_override_colors/font_color = Color(0.79238, 0.850209, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("3_pdw37")
+theme_override_fonts/font = ExtResource("7_x1dt8")
 theme_override_font_sizes/font_size = 20
-icon = ExtResource("4_r4qrg")
+icon = ExtResource("8_lprw3")
+flat = true
 autowrap_mode = 2
 icon_alignment = 1
 
 [node name="Opcion4" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.160784, 0, 1, 1)
+theme_override_colors/font_color = Color(0.79238, 0.850209, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("3_pdw37")
+theme_override_fonts/font = ExtResource("7_x1dt8")
 theme_override_font_sizes/font_size = 20
-icon = ExtResource("4_r4qrg")
+icon = ExtResource("9_cx030")
+flat = true
 autowrap_mode = 2
 icon_alignment = 1
 
@@ -128,3 +348,4 @@ icon_alignment = 1
 stream = ExtResource("6_5sccr")
 volume_db = -10.214
 autoplay = true
+parameters/looping = true

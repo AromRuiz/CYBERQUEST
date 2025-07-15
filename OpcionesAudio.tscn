@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://byfbcc0bqqw2e"]
+
+[ext_resource type="Script" path="res://OpcionesAudio.gd" id="1_dlage"]
+[ext_resource type="Texture2D" uid="uid://budpfc8mras0r" path="res://Recursos/Fondos/optionmenu.png" id="2_xwi0c"]
+[ext_resource type="FontFile" uid="uid://dytmmui3r1ad4" path="res://Recursos/fuentes/kirifont/KiriFont.ttf" id="3_q42kd"]
+[ext_resource type="Script" path="res://music_slider.gd" id="4_itecy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_no4kh"]
+font = ExtResource("3_q42kd")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_n6lyb"]
+font = ExtResource("3_q42kd")
+font_size = 25
+
+[node name="OpcionesAudio" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_dlage")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 380.0
+grow_horizontal = 2
+texture = ExtResource("2_xwi0c")
+expand_mode = 1
+
+[node name="Cerrar" type="Button" parent="TextureRect"]
+modulate = Color(100, 0, 0, 1)
+layout_mode = 0
+offset_left = 609.0
+offset_top = 36.0
+offset_right = 673.0
+offset_bottom = 99.0
+
+[node name="Musica" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 129.0
+offset_right = 110.0
+offset_bottom = 152.0
+text = "Música"
+label_settings = SubResource("LabelSettings_no4kh")
+
+[node name="SFX" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 201.0
+offset_right = 198.0
+offset_bottom = 227.0
+text = "efectos"
+label_settings = SubResource("LabelSettings_n6lyb")
+
+[node name="MusicSlider" type="HSlider" parent="TextureRect"]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 134.0
+offset_right = 586.0
+offset_bottom = 150.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("4_itecy")
+audio_bus_name = "Music"
+
+[node name="SFXSlider" type="HSlider" parent="TextureRect"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 206.0
+offset_right = 589.0
+offset_bottom = 222.0
+
+[connection signal="pressed" from="TextureRect/Cerrar" to="." method="_on_cerrar_pressed"]
+[connection signal="value_changed" from="TextureRect/MusicSlider" to="TextureRect/MusicSlider" method="_on_value_changed"]

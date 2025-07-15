@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Preguntas="*res://Scripts/preguntas.gd"
 JuegoState="*res://Scripts/JuegoState.gd"
+AudioManagers="*res://Scripts/AudioManager.gd"
+OpcionesAudio="*res://OpcionesAudio.tscn"
 
 [display]
 

@@ -1,11 +1,97 @@
-[gd_scene load_steps=7 format=3 uid="uid://6rvlvm64kpvw"]
+[gd_scene load_steps=11 format=3 uid="uid://6rvlvm64kpvw"]
 
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="1_bu4bi"]
 [ext_resource type="Script" path="res://ranking.gd" id="1_l8a1c"]
-[ext_resource type="Texture2D" uid="uid://ctua08krldxx5" path="res://Recursos/Botones/botonopciones.png" id="2_waky4"]
 [ext_resource type="FontFile" uid="uid://h0lcg2ndmnti" path="res://Recursos/fuentes/Kenney Blocks.ttf" id="3_v08nq"]
-[ext_resource type="Texture2D" uid="uid://bddop78mgn0gs" path="res://Recursos/Fondos/a97271f5-dcea-403b-bc33-1b5d1e2bb447.png" id="5_gtbeb"]
+[ext_resource type="Texture2D" uid="uid://dga6q2eiwrq72" path="res://Recursos/Botones/BO/Menubuton.png" id="4_ovutc"]
+[ext_resource type="Texture2D" uid="uid://dl0a860nyr382" path="res://Recursos/sprites/transparent-sun-ray-background-radial-beam-sunrise-or-sunset-light-retro-design-illustration-light-sunburst-glowing-background-sunburst-transparent-free-png.png" id="5_v8674"]
 [ext_resource type="AudioStream" uid="uid://cmtv7rlifos8t" path="res://Recursos/audio/What a Great Picture!.mp3" id="6_3yicq"]
+[ext_resource type="Texture2D" uid="uid://blb53qip66jo2" path="res://Recursos/Fondos/NUEVOSLAYERS/RANKINGLABEL.png" id="6_jde6v"]
+
+[sub_resource type="Animation" id="Animation_fcfdw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transparent-sun-ray-background-radial-beam-sunrise-or-sunset-light-retro-design-illustration-light-sunburst-glowing-background-sunburst-transparent-free-png:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.122173]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1777, 1024)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(85, 29)]
+}
+
+[sub_resource type="Animation" id="Animation_njilx"]
+resource_name = "sol"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transparent-sun-ray-background-radial-beam-sunrise-or-sunset-light-retro-design-illustration-light-sunburst-glowing-background-sunburst-transparent-free-png:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.122173, 0.0, 0.122173]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1777, 1024), Vector2(1982, 1170)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(85, 29), Vector2(53, 11)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ekkrp"]
+_data = {
+"RESET": SubResource("Animation_fcfdw"),
+"sol": SubResource("Animation_njilx")
+}
 
 [node name="Ranking" type="Control"]
 layout_mode = 3
@@ -38,19 +124,26 @@ offset_bottom = 1054.0
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 239.0
-offset_top = 1055.0
-offset_right = 516.0
-offset_bottom = 1181.0
+offset_left = 146.0
+offset_top = 1047.0
+offset_right = 577.0
+offset_bottom = 1261.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_v08nq")
 theme_override_font_sizes/font_size = 40
-text = "MENU"
-icon = ExtResource("2_waky4")
+icon = ExtResource("4_ovutc")
+flat = true
 icon_alignment = 1
+expand_icon = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Transparent-sun-ray-background-radial-beam-sunrise-or-sunset-light-retro-design-illustration-light-sunburst-glowing-background-sunburst-transparent-free-png" type="Sprite2D" parent="."]
+position = Vector2(357, 171.5)
+scale = Vector2(3.31, 1.665)
+skew = -0.122173
+texture = ExtResource("5_v8674")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
@@ -59,12 +152,18 @@ offset_top = 29.0
 offset_right = 1862.0
 offset_bottom = 1053.0
 scale = Vector2(0.311246, 0.247066)
-texture = ExtResource("5_gtbeb")
+texture = ExtResource("6_jde6v")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_3yicq")
 volume_db = -17.643
 autoplay = true
 parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ekkrp")
+}
+speed_scale = 2.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

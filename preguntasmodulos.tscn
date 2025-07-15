@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dcew6x5gjxhvt"]
+[gd_scene load_steps=25 format=3 uid="uid://dcew6x5gjxhvt"]
 
 [ext_resource type="Script" path="res://preguntasmodulos.gd" id="1_155ea"]
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="1_vt4us"]
+[ext_resource type="Texture2D" uid="uid://dl0a860nyr382" path="res://Recursos/sprites/transparent-sun-ray-background-radial-beam-sunrise-or-sunset-light-retro-design-illustration-light-sunburst-glowing-background-sunburst-transparent-free-png.png" id="3_pj830"]
 [ext_resource type="Texture2D" uid="uid://bgprpl3rq7nlg" path="res://Recursos/Botones/ISLAS/I1.png" id="4_hnvf5"]
+[ext_resource type="Texture2D" uid="uid://cacplina1c256" path="res://Recursos/sprites/selectworld.png" id="4_uwqyy"]
 [ext_resource type="Texture2D" uid="uid://byiun5kjoohr2" path="res://Recursos/Botones/ISLAS/I2.png" id="5_qxq78"]
 [ext_resource type="Texture2D" uid="uid://b38u2unquyfs4" path="res://Recursos/Botones/ISLAS/I3.png" id="6_e0nik"]
 [ext_resource type="Texture2D" uid="uid://dc6qlo7c2ryou" path="res://Recursos/Botones/ISLAS/I41.png" id="7_xfvli"]
@@ -12,6 +14,154 @@
 [ext_resource type="AudioStream" uid="uid://dlrfhdbmgi5yb" path="res://Recursos/audio/Rayman 2 - 1-13 - bonus level.mp3" id="11_12set"]
 [ext_resource type="Texture2D" uid="uid://vjy5c2l8t6bt" path="res://Recursos/Botones/ISLAS/I8.png" id="11_40vys"]
 [ext_resource type="Texture2D" uid="uid://vokanwgk54w3" path="res://Recursos/sprites/nube.png" id="12_jm3is"]
+[ext_resource type="Texture2D" uid="uid://dvbajscus7jnt" path="res://Recursos/Botones/buttonaudion.png" id="15_7yjvb"]
+
+[sub_resource type="Animation" id="Animation_a1chh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0mgrp"]
+resource_name = "rotacion"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 2.76667, 4.06667, 5.06667, 6.3, 7.73333, 8.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.523599, 0.0, 0.523599, 0.0, -0.523599, 0.0, 0.523599]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f5m3x"]
+_data = {
+"RESET": SubResource("Animation_a1chh"),
+"rotacion": SubResource("Animation_0mgrp")
+}
+
+[sub_resource type="Animation" id="Animation_5yqgd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1200, 500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(127.074, 6.05053)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.727744, 0.608392)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:pivot_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_inus5"]
+resource_name = "blo"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1200, 500), Vector2(873, 377)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(127.074, 6.05053), Vector2(246, 43)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.727744, 0.608392), Vector2(0.727744, 0.608392)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:pivot_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7onyk"]
+_data = {
+"RESET": SubResource("Animation_5yqgd"),
+"blo": SubResource("Animation_inus5")
+}
 
 [sub_resource type="Animation" id="Animation_g6umh"]
 length = 20.0
@@ -66,10 +216,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 13.0
-offset_right = 317.0
-offset_bottom = -1.0
+offset_right = 320.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.694285, 0.991648)
@@ -80,6 +228,35 @@ horizontal_scroll_mode = 0
 custom_minimum_size = Vector2(0, 2000)
 layout_mode = 2
 texture = ExtResource("1_vt4us")
+
+[node name="Transparent-sun-ray-background-radial-beam-sunrise-or-sunset-light-retro-design-illustration-light-sunburst-glowing-background-sunburst-transparent-free-png" type="Sprite2D" parent="ScrollContainer/TextureRect"]
+modulate = Color(1, 1, 1, 0.87451)
+position = Vector2(548.076, 138.154)
+scale = Vector2(4.08304, 1.00842)
+texture = ExtResource("3_pj830")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/TextureRect/Transparent-sun-ray-background-radial-beam-sunrise-or-sunset-light-retro-design-illustration-light-sunburst-glowing-background-sunburst-transparent-free-png"]
+libraries = {
+"": SubResource("AnimationLibrary_f5m3x")
+}
+autoplay = "rotacion"
+speed_scale = 4.0
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/TextureRect"]
+layout_mode = 0
+offset_left = 127.074
+offset_top = 6.05053
+offset_right = 1327.07
+offset_bottom = 506.051
+scale = Vector2(0.727744, 0.608392)
+texture = ExtResource("4_uwqyy")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/TextureRect/TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_7onyk")
+}
+autoplay = "blo"
 
 [node name="Nube" type="Sprite2D" parent="ScrollContainer/TextureRect"]
 position = Vector2(-53, 340)
@@ -92,98 +269,107 @@ libraries = {
 }
 autoplay = "RESET"
 
-[node name="BotonModulo1" type="Button" parent="ScrollContainer/TextureRect"]
+[node name="BotonModulo1" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
-offset_left = 176.166
-offset_top = 39.3285
-offset_right = 684.166
-offset_bottom = 547.328
+offset_top = 187.567
+offset_right = 508.0
+offset_bottom = 695.567
 scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(250, 250)
 icon = ExtResource("4_hnvf5")
 flat = true
+expand_icon = true
 
-[node name="BotonModulo2" type="Button" parent="ScrollContainer/TextureRect"]
+[node name="BotonModulo2" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
-offset_left = 677.345
-offset_top = 151.311
-offset_right = 1185.34
-offset_bottom = 659.311
+offset_left = 536.626
+offset_top = 275.99
+offset_right = 1044.63
+offset_bottom = 783.99
 scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(250, 205)
 icon = ExtResource("5_qxq78")
 flat = true
 
-[node name="BotonModulo3" type="Button" parent="ScrollContainer/TextureRect"]
+[node name="BotonModulo3" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
-offset_left = 120.769
-offset_top = 439.919
-offset_right = 628.769
-offset_bottom = 947.919
+offset_left = -23.8811
+offset_top = 545.486
+offset_right = 484.119
+offset_bottom = 1053.49
 scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(250, 205)
 icon = ExtResource("6_e0nik")
 flat = true
 
-[node name="BotonModulo4" type="Button" parent="ScrollContainer/TextureRect"]
+[node name="BotonModulo4" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
-offset_left = 636.389
-offset_top = 606.43
-offset_right = 1144.39
-offset_bottom = 1114.43
+offset_left = 537.243
+offset_top = 714.971
+offset_right = 1045.24
+offset_bottom = 1222.97
 scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(250, 205)
 icon = ExtResource("7_xfvli")
 flat = true
 
-[node name="BotonModulo5" type="Button" parent="ScrollContainer/TextureRect"]
+[node name="BotonModulo5" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
-offset_left = 140.655
-offset_top = 845.336
-offset_right = 648.655
-offset_bottom = 1353.34
+offset_left = -3.99512
+offset_top = 950.903
+offset_right = 504.005
+offset_bottom = 1458.91
 scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(250, 205)
 icon = ExtResource("8_onqfo")
 flat = true
 
-[node name="BotonModulo6" type="Button" parent="ScrollContainer/TextureRect"]
+[node name="BotonModulo6" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
-offset_left = 538.379
-offset_top = 1056.49
-offset_right = 1046.38
-offset_bottom = 1564.49
+offset_left = 540.124
+offset_top = 1161.7
+offset_right = 1048.13
+offset_bottom = 1669.7
 scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(250, 205)
 icon = ExtResource("9_ape0u")
 flat = true
 
-[node name="BotonModulo7" type="Button" parent="ScrollContainer/TextureRect"]
+[node name="BotonModulo7" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
-offset_left = 105.144
-offset_top = 1356.93
-offset_right = 613.144
-offset_bottom = 1864.93
+offset_left = -39.5061
+offset_top = 1462.5
+offset_right = 468.494
+offset_bottom = 1970.5
 scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(250, 205)
 icon = ExtResource("10_0l01q")
 flat = true
 
-[node name="BotonModulo8" type="Button" parent="ScrollContainer/TextureRect"]
+[node name="BotonModulo8" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
-offset_left = 632.128
-offset_top = 1470.35
-offset_right = 1140.13
-offset_bottom = 1978.35
+offset_left = 555.968
+offset_top = 1588.27
+offset_right = 1063.97
+offset_bottom = 2096.27
 scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(250, 205)
 icon = ExtResource("11_40vys")
 flat = true
 
-[node name="GridContainer" type="GridContainer" parent="."]
-visible = false
+[node name="Button" type="Button" parent="ScrollContainer/TextureRect"]
 layout_mode = 0
-offset_left = 67.0
-offset_top = 205.0
-offset_right = 678.0
-offset_bottom = 1108.0
-theme_override_constants/h_separation = 57
-theme_override_constants/v_separation = 133
-columns = 2
+offset_left = -17.2839
+offset_top = 14.1179
+offset_right = 109.716
+offset_bottom = 112.118
+icon = ExtResource("15_7yjvb")
+flat = true
+expand_icon = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_12set")
-volume_db = -20.429
 autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="ScrollContainer/TextureRect/Button" to="." method="_on_button_pressed"]

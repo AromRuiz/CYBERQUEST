@@ -1,0 +1,159 @@
+[gd_scene load_steps=20 format=3 uid="uid://cwdki8uit2i1s"]
+
+[ext_resource type="Script" path="res://barraprogreso.gd" id="1_1ja3j"]
+[ext_resource type="Texture2D" uid="uid://cw86p01yor34u" path="res://Recursos/sprites/barraprogreso.png" id="1_whodt"]
+[ext_resource type="Texture2D" uid="uid://b3psm5lawqfml" path="res://Recursos/sprites/barraverde.png" id="2_nss4r"]
+[ext_resource type="Texture2D" uid="uid://70cu5msbxgrd" path="res://Recursos/sprites/vpng.png" id="3_jdvid"]
+[ext_resource type="Texture2D" uid="uid://u6lq68dmui2t" path="res://Recursos/sprites/compusheet.png" id="4_xv67x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3kef"]
+atlas = ExtResource("3_jdvid")
+region = Rect2(0, 0, 121, 226)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajmn1"]
+atlas = ExtResource("3_jdvid")
+region = Rect2(363, 0, 121, 226)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_laswk"]
+atlas = ExtResource("3_jdvid")
+region = Rect2(726, 0, 121, 226)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4ddd"]
+atlas = ExtResource("3_jdvid")
+region = Rect2(605, 0, 121, 226)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8fri"]
+atlas = ExtResource("3_jdvid")
+region = Rect2(968, 0, 121, 226)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k44qf"]
+atlas = ExtResource("3_jdvid")
+region = Rect2(847, 0, 121, 226)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bc2n1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3kef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajmn1")
+}],
+"loop": true,
+"name": &"feliz",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_laswk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4ddd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8fri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k44qf")
+}],
+"loop": true,
+"name": &"triste",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywrsm"]
+atlas = ExtResource("4_xv67x")
+region = Rect2(880, 459, 176, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reybj"]
+atlas = ExtResource("4_xv67x")
+region = Rect2(880, 612, 176, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hokrh"]
+atlas = ExtResource("4_xv67x")
+region = Rect2(1232, 459, 176, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_646a3"]
+atlas = ExtResource("4_xv67x")
+region = Rect2(1056, 459, 176, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p34ud"]
+atlas = ExtResource("4_xv67x")
+region = Rect2(1056, 459, 176, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltpig"]
+atlas = ExtResource("4_xv67x")
+region = Rect2(1056, 471, 176, 157)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u1hrf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywrsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reybj")
+}],
+"loop": true,
+"name": &"feliz",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hokrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_646a3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p34ud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltpig")
+}],
+"loop": true,
+"name": &"triste",
+"speed": 5.0
+}]
+
+[node name="barraprogreso" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ja3j")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 88.0
+offset_right = 1447.0
+offset_bottom = 488.0
+scale = Vector2(0.460013, 0.430954)
+value = 50.0
+texture_under = ExtResource("1_whodt")
+texture_progress = ExtResource("2_nss4r")
+
+[node name="virus" type="AnimatedSprite2D" parent="."]
+position = Vector2(437, 39)
+scale = Vector2(-1.26573, 0.927134)
+sprite_frames = SubResource("SpriteFrames_bc2n1")
+animation = &"triste"
+frame_progress = 0.19134
+
+[node name="compu" type="AnimatedSprite2D" parent="."]
+position = Vector2(318, 71)
+sprite_frames = SubResource("SpriteFrames_u1hrf")
+animation = &"feliz"

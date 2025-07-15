@@ -3,7 +3,8 @@ var preguntas = []
 var indice_actual = 0
 var puntos = 0
 var modulo = JuegoState.modulo_actual
-@onready var pregunta_label = $PreguntaLabel
+@onready var barra_animada = $barraprogreso
+@onready var pregunta_label = $FeedbackLabel/TextureRect/PreguntaLabel
 @onready var botones_opciones = [
 	$VBoxContainer/Opcion1,
 	$VBoxContainer/Opcion2,
@@ -59,8 +60,10 @@ func _on_opcion_presionada(indice_presionado: int):
 	if indice_presionado == correcta:
 		puntos += 10
 		feedback_label.text = "¡Correcto! +10 puntos"
+		barra_animada.actualizar_barra(true)
 	else:
 		feedback_label.text = "Incorrecto"
+		barra_animada.actualizar_barra(false)
 
 	await get_tree().create_timer(1.5).timeout
 	indice_actual += 1

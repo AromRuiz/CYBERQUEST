@@ -1,27 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://clewcvaugtf1d"]
+[gd_scene load_steps=10 format=3 uid="uid://clewcvaugtf1d"]
 
 [ext_resource type="Script" path="res://Scripts/login.gd" id="1_ypwye"]
 [ext_resource type="Texture2D" uid="uid://tdotsof8n4su" path="res://Recursos/Fondos/Cyber.jpg" id="2_2aqbx"]
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="2_w2ija"]
 [ext_resource type="Texture2D" uid="uid://cijakey6xt5in" path="res://Recursos/Fondos/5c1cd2237f4b43db7780df6fa7fe6770.jpg" id="3_vmhth"]
-[ext_resource type="FontFile" uid="uid://h0lcg2ndmnti" path="res://Recursos/fuentes/Kenney Blocks.ttf" id="4_04i6g"]
 [ext_resource type="FontFile" uid="uid://diw0h42sk6n42" path="res://Recursos/fuentes/Kenney Future.ttf" id="5_ueaj3"]
-[ext_resource type="Texture2D" uid="uid://b6iy2lusxx84b" path="res://Recursos/Botones/button (1).png" id="6_lifrl"]
-[ext_resource type="Texture2D" uid="uid://cxslxtqha5xkb" path="res://Recursos/Botones/button (3).png" id="8_5tcrb"]
+[ext_resource type="Texture2D" uid="uid://cawbiawyteko6" path="res://Recursos/Fondos/NUEVOSLAYERS/BIENVENIDA.png" id="6_6rpky"]
+[ext_resource type="Texture2D" uid="uid://cqk1n716uhfjf" path="res://Recursos/Botones/BO/BIN.png" id="7_x6lip"]
 [ext_resource type="AudioStream" uid="uid://5y4vebiccrei" path="res://Recursos/audio/[OST] Super Mario Maker - Title Screen.mp3" id="8_8llh0"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_gakb8"]
-font = ExtResource("4_04i6g")
-font_size = 36
-font_color = Color(0.992157, 0.796078, 0.431373, 1)
-outline_size = 46
-outline_color = Color(0.454902, 0.72549, 1, 1)
+[ext_resource type="Texture2D" uid="uid://dgp3oli0b3o3h" path="res://Recursos/Botones/BO/BR.png" id="8_ltpdf"]
 
 [node name="Login" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -21.0
+offset_right = -13.0
+offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ypwye")
@@ -44,7 +41,7 @@ anchor_bottom = 0.5
 offset_left = -291.0
 offset_top = -316.0
 offset_right = 1039.0
-offset_bottom = 1176.0
+offset_bottom = 992.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.452482, 0.452482)
@@ -61,7 +58,7 @@ anchor_bottom = 0.5
 offset_left = -289.0
 offset_top = -317.0
 offset_right = 1041.0
-offset_bottom = 1175.0
+offset_bottom = 787.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.452482, 0.452482)
@@ -76,23 +73,19 @@ offset_bottom = 763.395
 theme_override_fonts/font = ExtResource("5_ueaj3")
 theme_override_font_sizes/font_size = 20
 
-[node name="Label2" type="Label" parent="TextureRect"]
-layout_mode = 0
-offset_left = 383.656
-offset_top = 788.395
-offset_right = 653.656
-offset_bottom = 845.395
-text = "Contraseña"
-label_settings = SubResource("LabelSettings_gakb8")
+[node name="Label2" type="Sprite2D" parent="TextureRect"]
+position = Vector2(521.257, 823.191)
+scale = Vector2(0.660869, 0.550239)
+texture = ExtResource("6_6rpky")
+region_enabled = true
+region_rect = Rect2(0, 449.61, 556, 205.785)
 
-[node name="Label" type="Label" parent="TextureRect"]
-layout_mode = 0
-offset_left = 416.656
-offset_top = 621.395
-offset_right = 614.656
-offset_bottom = 678.395
-text = "USUARIO"
-label_settings = SubResource("LabelSettings_gakb8")
+[node name="Label" type="Sprite2D" parent="TextureRect"]
+position = Vector2(522.681, 622.794)
+scale = Vector2(0.6455, 0.713201)
+texture = ExtResource("6_6rpky")
+region_enabled = true
+region_rect = Rect2(0, 228.821, 556, 212.215)
 
 [node name="pass_edit" type="LineEdit" parent="TextureRect"]
 layout_mode = 0
@@ -102,32 +95,33 @@ offset_right = 673.656
 offset_bottom = 941.395
 secret = true
 
-[node name="Label3" type="Label" parent="TextureRect"]
-layout_mode = 0
-offset_left = 388.656
-offset_top = 476.395
-offset_right = 658.656
-offset_bottom = 533.395
-text = "BIENVENIDO"
-label_settings = SubResource("LabelSettings_gakb8")
+[node name="Label3" type="Sprite2D" parent="TextureRect"]
+position = Vector2(525.53, 423.596)
+texture = ExtResource("6_6rpky")
+region_enabled = true
+region_rect = Rect2(5.76404, 16.6051, 529.467, 188.636)
 
 [node name="LoginButton" type="Button" parent="TextureRect"]
 modulate = Color(0, 1.002, 1, 1)
 layout_mode = 0
-offset_left = 344.656
-offset_top = 955.395
-offset_right = 695.656
-offset_bottom = 1015.4
-icon = ExtResource("6_lifrl")
+offset_left = 236.417
+offset_top = 952.79
+offset_right = 790.417
+offset_bottom = 1155.79
+icon = ExtResource("7_x6lip")
+flat = true
+expand_icon = true
 
 [node name="RegisterButton" type="Button" parent="TextureRect"]
 modulate = Color(0, 1, 1, 1)
 layout_mode = 0
-offset_left = 344.656
-offset_top = 1036.4
-offset_right = 695.656
-offset_bottom = 1096.4
-icon = ExtResource("8_5tcrb")
+offset_left = 227.872
+offset_top = 1132.79
+offset_right = 808.872
+offset_bottom = 1343.79
+icon = ExtResource("8_ltpdf")
+flat = true
+expand_icon = true
 
 [node name="error_label" type="Label" parent="TextureRect"]
 visible = false
