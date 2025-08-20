@@ -118,7 +118,7 @@ texture = ExtResource("1_bu4bi")
 [node name="RankingLista" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 280.0
+offset_top = 340.0
 offset_right = 692.0
 offset_bottom = 1054.0
 

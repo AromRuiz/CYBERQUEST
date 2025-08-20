@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cblgkhrwxyn2u"
+path="res://.godot/imported/Title Theme - Mega Man 8 [OST].mp3-8e06754381ca866ddbe0c476b81c50b7.mp3str"
+
+[deps]
+
+source_file="res://Recursos/audio/Title Theme - Mega Man 8 [OST].mp3"
+dest_files=["res://.godot/imported/Title Theme - Mega Man 8 [OST].mp3-8e06754381ca866ddbe0c476b81c50b7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

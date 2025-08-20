@@ -12,7 +12,8 @@ var modulo = JuegoState.modulo_actual
 	$VBoxContainer/Opcion4
 ]
 @onready var feedback_label = $FeedbackLabel
-
+@onready var img_correcto = $correcto
+@onready var img_incorrecto = $incorrecto
 func _ready():
 	for i in range(botones_opciones.size()):
 		botones_opciones[i].pressed.connect(_on_opcion_presionada.bind(i))
@@ -57,15 +58,22 @@ func mostrar_pregunta():
 
 func _on_opcion_presionada(indice_presionado: int):
 	var correcta = preguntas[indice_actual]["respuesta_correcta"]
-	if indice_presionado == correcta:
+	var es_correcta = (indice_presionado == correcta)
+
+	# Actualizar feedback textual y barra
+	if es_correcta:
 		puntos += 10
 		feedback_label.text = "¡Correcto! +10 puntos"
 		barra_animada.actualizar_barra(true)
+		img_correcto.visible = true
 	else:
 		feedback_label.text = "Incorrecto"
 		barra_animada.actualizar_barra(false)
+		img_incorrecto.visible = true
 
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.2).timeout
+	img_correcto.visible = false
+	img_incorrecto.visible = false
 	indice_actual += 1
 	mostrar_pregunta()
 
@@ -73,26 +81,56 @@ func finalizar_modulo():
 	JuegoState.puntos = puntos
 	_enviar_puntaje_y_esperar(puntos, JuegoState.modulo_actual)
 
-func _enviar_puntaje_y_esperar(puntos: int, modulo: int):
-	var http = HTTPRequest.new()
-	add_child(http)
-	http.request_completed.connect(func(_result, response_code, _headers, _body):
-		if response_code == 200:
-			print("Puntaje guardado con éxito")
-		else:
-			print("Error al guardar puntaje, código:", response_code)
-		# Ahora sí cambiamos de escena
+func _enviar_puntaje_y_esperar(p_puntos: int, p_modulo: int):
+	# 1) Validación sencilla
+	if JuegoState.id_usuario <= 0:
 		get_tree().change_scene_to_file("res://resultado.tscn")
-	)
-	var cuerpo = {
+		return
+
+	# Crear y añadir HTTPRequest
+	var http := HTTPRequest.new()
+	add_child(http)
+
+	# Conectar señal (4 argumentos)
+	http.request_completed.connect(_on_puntaje_guardado)
+
+	# Enviar petición
+	var cuerpo := {
 		"id_usuario": JuegoState.id_usuario,
-		"modulo": modulo,
-		"puntaje": puntos
+		"modulo":     p_modulo,
+		"puntaje":    p_puntos
 	}
-	var json = JSON.stringify(cuerpo)
-	http.request(
+	var err := http.request(
 		"http://localhost:4000/puntajes",
 		["Content-Type: application/json"],
 		HTTPClient.METHOD_POST,
-		json
+		JSON.stringify(cuerpo)
 	)
+	if err != OK:
+		push_error("Error al enviar solicitud HTTP: %s" % err)
+		get_tree().change_scene_to_file("res://resultado.tscn")
+
+func _on_puntaje_guardado(
+	result: int,
+	response_code: int,
+	headers: PackedStringArray,
+	body: PackedByteArray
+) -> void:
+	# Liberar el nodo HTTPRequest (asume que es el primer hijo HTTPRequest)
+	for child in get_children():
+		if child is HTTPRequest:
+			child.queue_free()
+			break
+
+	# Manejo de la respuesta
+	if response_code == 200:
+		print("🎉 Puntaje guardado con éxito")
+	else:
+		push_error("❌ Falló guardar puntaje, HTTP %d" % response_code)
+
+	# Cambiar escena
+	get_tree().change_scene_to_file("res://resultado.tscn")
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://preguntasmodulos.tscn")

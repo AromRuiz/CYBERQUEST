@@ -2,7 +2,7 @@ extends Control
 
 @onready var ranking_lista = $RankingLista
 @onready var http_request = HTTPRequest.new()
-
+var tema_label = preload("res://Recursos/fuentes/tema_ranking.tres")
 func _ready():
 	add_child(http_request)
 	http_request.request_completed.connect(_on_request_completed)
@@ -25,8 +25,8 @@ func _on_request_completed(result, response_code, headers, body):
 			entry["puntaje"],
 			entry["modulo"]
 		]
+		label.theme = tema_label
 		ranking_lista.add_child(label)
-
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://interfaz_pre_juego.tscn")

@@ -35,8 +35,11 @@ func _on_request_completed(result, response_code, headers, body):
 
 		JuegoState.id_usuario = json["user_id"]
 		JuegoState.nombre_usuario = json["nombre"]
-
-		get_tree().change_scene_to_file("res://MascotaSeleccion.tscn")
+		JuegoState.mascota= json.get("mascota", "")
+		if JuegoState.mascota == "" or JuegoState.mascota == null:
+			get_tree().change_scene_to_file("res://MascotaSeleccion.tscn")
+		else:
+			get_tree().change_scene_to_file("res://interfaz_pre_juego.tscn")
 	else:
 		var msg = json.get("message", "Usuario o contraseña incorrectos.")
 		_show_error(msg)

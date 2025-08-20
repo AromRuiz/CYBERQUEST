@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://pem3ae8anujf"]
+
+[ext_resource type="FontFile" uid="uid://c7168u6k4c7jj" path="res://Recursos/fuentes/kirifont/KiriFont.otf" id="1_2qv0m"]
+
+[resource]
+default_font = ExtResource("1_2qv0m")
+default_font_size = 20

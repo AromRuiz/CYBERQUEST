@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://cseejo1m4v7xy"]
+
+[ext_resource type="Texture2D" uid="uid://dh18tqedatvw" path="res://Recursos/Fondos/NUEVOSLAYERS/Blur-Pattern-PNG-File.png" id="1_3w1mu"]
+[ext_resource type="Texture2D" uid="uid://bi06ffd8tfc1g" path="res://Recursos/Fondos/NUEVOSLAYERS/Correcto.png" id="2_ufkhx"]
+
+[sub_resource type="Animation" id="Animation_eth4r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(547, 94)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(86, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_8xadm"]
+resource_name = "correcto"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(547, 94), Vector2(701, 144)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(86, 48), Vector2(9, 23)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ldo30"]
+_data = {
+"RESET": SubResource("Animation_eth4r"),
+"correcto": SubResource("Animation_8xadm")
+}
+
+[node name="correcto" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(358.5, 125.5)
+scale = Vector2(1.0012, 0.221463)
+texture = ExtResource("1_3w1mu")
+region_rect = Rect2(96.8677, 101.852, 662.136, 709.47)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 86.0
+offset_top = 48.0
+offset_right = 633.0
+offset_bottom = 142.0
+texture = ExtResource("2_ufkhx")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_ldo30")
+}
+autoplay = "correcto"
+speed_scale = 2.0

@@ -1,6 +1,13 @@
 extends Control
 @onready var label_puntaje = $LabelPuntaje
 func _ready() -> void:
+	$TextureRect/compu_nino.visible   = false
+	$TextureRect/celular_nino.visible = false
+	$TextureRect/laptop_nino.visible  = false
+	match JuegoState.mascota:
+		"computadora": $TextureRect/compu_nino.visible = true
+		"celular"    : $TextureRect/celular_nino.visible = true
+		"laptop"     : $TextureRect/laptop_nino.visible = true
 	fetch_puntaje_desde_bd()
 func fetch_puntaje_desde_bd():
 	var http = HTTPRequest.new()
@@ -28,3 +35,7 @@ func _on_empezar_pressed() -> void:
 
 func _on_boton_tabla_pressed() -> void:
 	get_tree().change_scene_to_file("res://Ranking.tscn")
+
+
+func _on_buttonregresar_pressed() -> void:
+	get_tree().change_scene_to_file("res://login.tscn")
