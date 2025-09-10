@@ -124,13 +124,15 @@ func _on_puntaje_guardado(
 
 	# Manejo de la respuesta
 	if response_code == 200:
-		print("🎉 Puntaje guardado con éxito")
+		print("Puntaje guardado con éxito")
 	else:
-		push_error("❌ Falló guardar puntaje, HTTP %d" % response_code)
-
-	# Cambiar escena
+		push_error("Falló guardar puntaje, HTTP %d" % response_code)
 	get_tree().change_scene_to_file("res://resultado.tscn")
 
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://preguntasmodulos.tscn")
+
+
+func _on_button_2_pressed() -> void:
+	OpcionesAudio.show()

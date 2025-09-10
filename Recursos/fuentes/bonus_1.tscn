@@ -1,12 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://cq36ahrxldjaf"]
+[gd_scene load_steps=21 format=3 uid="uid://cq36ahrxldjaf"]
 
 [ext_resource type="Script" path="res://Recursos/fuentes/bonus_1.gd" id="1_er73y"]
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="1_r5wk6"]
 [ext_resource type="Texture2D" uid="uid://drn7owwtbrwpa" path="res://Recursos/Fondos/NUEVOSLAYERS/abc.png" id="2_k6o0y"]
 [ext_resource type="Texture2D" uid="uid://2350sexadsrw" path="res://Recursos/Fondos/barra.png" id="3_ufwip"]
-[ext_resource type="Texture2D" uid="uid://cev6238nsyl4m" path="res://Recursos/Fondos/NUEVOSLAYERS/panel.png" id="4_a5406"]
+[ext_resource type="Texture2D" uid="uid://brsyxmud7uxqb" path="res://Recursos/Fondos/NUEVOSLAYERS/BANNER NEW.png" id="4_kwmd4"]
 [ext_resource type="Texture2D" uid="uid://bro7cgu7cruw7" path="res://Recursos/Fondos/NUEVOSLAYERS/image (7).png" id="5_c6cag"]
 [ext_resource type="Texture2D" uid="uid://c2v3xt7exrnui" path="res://Recursos/Fondos/NUEVOSLAYERS/numeros.png" id="7_o2i6c"]
+[ext_resource type="AudioStream" uid="uid://bs2m8ce7qtt6t" path="res://Recursos/audio/Sonic 3 And Knuckles OST - Sky Sanctuary.mp3" id="8_8uph1"]
+[ext_resource type="Texture2D" uid="uid://dvbajscus7jnt" path="res://Recursos/Botones/buttonaudion.png" id="9_fh5h8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u6jy"]
+atlas = ExtResource("7_o2i6c")
+region = Rect2(1077.44, 84.3272, 117.564, 99.1224)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kjpyu"]
 atlas = ExtResource("2_k6o0y")
@@ -16,9 +22,135 @@ region = Rect2(0, 0, 113.251, 113.919)
 atlas = ExtResource("2_k6o0y")
 region = Rect2(853.503, 142.689, 106.038, 124.479)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7u6jy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rghg1"]
 atlas = ExtResource("7_o2i6c")
-region = Rect2(1077.44, 84.3272, 117.564, 99.1224)
+region = Rect2(269, 87, 110, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ht4ir"]
+atlas = ExtResource("2_k6o0y")
+region = Rect2(200.901, 153.252, 79.2296, 109.282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swtd7"]
+atlas = ExtResource("2_k6o0y")
+region = Rect2(114.636, 6.51483, 92.7273, 108.182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgqur"]
+atlas = ExtResource("2_k6o0y")
+region = Rect2(525.172, 148.583, 116.112, 117.478)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdtgm"]
+atlas = ExtResource("2_k6o0y")
+region = Rect2(539.66, 435.34, 104.06, 122.21)
+
+[sub_resource type="Animation" id="Animation_uvf8f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(362, 228)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.67019, 0.797101)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Image(7):rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.169297]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Image(7):position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(366, 517)]
+}
+
+[sub_resource type="Animation" id="Animation_51ash"]
+resource_name = "layers"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(362, 228), Vector2(362, 228)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.67019, 0.797101), Vector2(0.727273, 0.904215)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Image(7):rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.169297, 0.169297]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Image(7):position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(366, 517), Vector2(366, 517)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wnonw"]
+_data = {
+"RESET": SubResource("Animation_uvf8f"),
+"layers": SubResource("Animation_51ash")
+}
 
 [node name="Bonus1" type="Control"]
 layout_mode = 3
@@ -52,36 +184,92 @@ region_rect = Rect2(52.3586, 438.984, 1287.7, 79.4023)
 [node name="Panel" type="Sprite2D" parent="."]
 position = Vector2(362, 228)
 scale = Vector2(0.67019, 0.797101)
-texture = ExtResource("4_a5406")
+texture = ExtResource("4_kwmd4")
 
 [node name="Image(7)" type="Sprite2D" parent="."]
-position = Vector2(353, 442)
+position = Vector2(366, 517)
+rotation = -0.169297
 scale = Vector2(0.700431, 0.649123)
 texture = ExtResource("5_c6cag")
+offset = Vector2(-18.56, -115.541)
 
-[node name="A" type="TextureButton" parent="."]
+[node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 62.0
-offset_top = 924.0
-offset_right = 185.0
-offset_bottom = 1059.0
+offset_left = 94.0
+offset_top = 935.0
+offset_right = 655.0
+offset_bottom = 1225.0
+theme_override_constants/h_separation = 37
+theme_override_constants/v_separation = 37
+columns = 4
+
+[node name="4" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_7u6jy")
+stretch_mode = 0
+
+[node name="A" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
 texture_normal = SubResource("AtlasTexture_kjpyu")
 stretch_mode = 0
 
-[node name="R" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 67.0
-offset_top = 1092.0
-offset_right = 218.0
-offset_bottom = 1243.0
+[node name="R" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
 texture_normal = SubResource("AtlasTexture_3wp28")
 stretch_mode = 0
 
-[node name="4" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 231.0
-offset_top = 924.0
-offset_right = 365.0
-offset_bottom = 1061.0
-texture_normal = SubResource("AtlasTexture_7u6jy")
+[node name="0" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_rghg1")
+ignore_texture_size = true
+stretch_mode = 1
+
+[node name="L" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ht4ir")
 stretch_mode = 0
+
+[node name="B" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_swtd7")
+stretch_mode = 0
+
+[node name="O" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_tgqur")
+stretch_mode = 0
+
+[node name="#" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_xdtgm")
+stretch_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 686.0
+offset_right = 668.0
+offset_bottom = 830.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8uph1")
+autoplay = true
+bus = &"Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wnonw")
+}
+autoplay = "layers"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 133.0
+offset_bottom = 106.0
+icon = ExtResource("9_fh5h8")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

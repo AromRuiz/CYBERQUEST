@@ -16,7 +16,7 @@ func _on_login_button_pressed() -> void:
 	var json_data = JSON.stringify(body)
 
 	http_request.request_raw(
-		"http://localhost:4000/login",
+		"http://api-2-production-12c8.up.railway.app/login",
 		["Content-Type: application/json"],
 		HTTPClient.METHOD_POST,
 		json_data.to_utf8_buffer()
@@ -51,3 +51,7 @@ func _show_error(msg: String):
 
 func _on_register_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Registro.tscn")
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://MascotaSeleccion.tscn")

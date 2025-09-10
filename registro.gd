@@ -30,7 +30,7 @@ func _on_register_button_pressed():
 	var json_data = JSON.stringify(body)
 
 	http_request.request_raw(
-		"http://localhost:4000/register",
+		"http://api-2-production-12c8.up.railway.app/register",
 		["Content-Type: application/json"],
 		HTTPClient.METHOD_POST,
 		json_data.to_utf8_buffer()

@@ -1,0 +1,149 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3ug7nlk2fbst"]
+
+[ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="1_4t8di"]
+[ext_resource type="Texture2D" uid="uid://c22yr2k4venr3" path="res://Recursos/sprites/compu like.png" id="2_swum6"]
+[ext_resource type="Texture2D" uid="uid://eysum517yauw" path="res://Recursos/Fondos/NUEVOSLAYERS/EXCELENTE.png" id="3_7evqr"]
+
+[sub_resource type="Animation" id="Animation_kwm8l"]
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(360, 592), Vector2(360, 543), Vector2(360, 409)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.606925, 0.66276)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Excelente:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(360, 864), Vector2(360, 864), Vector2(360, 864)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Excelente:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.439316, 0.485437), Vector2(0.521368, 0.660194), Vector2(0.613675, 0.864078)]
+}
+
+[sub_resource type="Animation" id="Animation_oum0c"]
+resource_name = "compu"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(360, 352), Vector2(360, 455), Vector2(360, 608)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.606925, 0.66276), Vector2(0.606925, 0.66276), Vector2(0.606925, 0.66276)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Excelente:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(360, 864), Vector2(360, 864)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Excelente:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.516239, 0.631068), Vector2(0.603419, 0.902913)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8wlty"]
+_data = {
+"RESET": SubResource("Animation_kwm8l"),
+"compu": SubResource("Animation_oum0c")
+}
+
+[node name="EXTRA-RESULTADOS" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4t8di")
+expand_mode = 1
+
+[node name="CompuLike" type="Sprite2D" parent="."]
+position = Vector2(360, 592)
+scale = Vector2(0.606925, 0.66276)
+texture = ExtResource("2_swum6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CompuLike"]
+libraries = {
+"": SubResource("AnimationLibrary_8wlty")
+}
+autoplay = "RESET"
+
+[node name="Excelente" type="Sprite2D" parent="."]
+position = Vector2(360, 864)
+scale = Vector2(0.439316, 0.485437)
+texture = ExtResource("3_7evqr")

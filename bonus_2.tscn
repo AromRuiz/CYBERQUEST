@@ -1,0 +1,228 @@
+[gd_scene load_steps=21 format=3 uid="uid://s3fulwur1vr0"]
+
+[ext_resource type="Script" path="res://bonus_2.gd" id="1_y2nna"]
+[ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="2_b7a28"]
+[ext_resource type="Texture2D" uid="uid://2350sexadsrw" path="res://Recursos/Fondos/barra.png" id="3_r3af6"]
+[ext_resource type="Texture2D" uid="uid://brsyxmud7uxqb" path="res://Recursos/Fondos/NUEVOSLAYERS/BANNER NEW.png" id="4_4poa1"]
+[ext_resource type="Texture2D" uid="uid://clpi41ek5lywq" path="res://Recursos/Fondos/NUEVOSLAYERS/cachorro.png" id="5_uwf03"]
+[ext_resource type="Texture2D" uid="uid://drn7owwtbrwpa" path="res://Recursos/Fondos/NUEVOSLAYERS/abc.png" id="6_uvrdl"]
+[ext_resource type="Texture2D" uid="uid://c2v3xt7exrnui" path="res://Recursos/Fondos/NUEVOSLAYERS/numeros.png" id="7_jnh1d"]
+[ext_resource type="Texture2D" uid="uid://dvbajscus7jnt" path="res://Recursos/Botones/buttonaudion.png" id="8_fcrbg"]
+[ext_resource type="AudioStream" uid="uid://bs2m8ce7qtt6t" path="res://Recursos/audio/Sonic 3 And Knuckles OST - Sky Sanctuary.mp3" id="9_qsx33"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wp28"]
+atlas = ExtResource("6_uvrdl")
+region = Rect2(853.503, 142.689, 106.038, 124.479)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rghg1"]
+atlas = ExtResource("7_jnh1d")
+region = Rect2(269, 87, 110, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ei20"]
+atlas = ExtResource("6_uvrdl")
+region = Rect2(309.419, 430.601, 134.431, 131.769)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swtd7"]
+atlas = ExtResource("6_uvrdl")
+region = Rect2(114.636, 6.51483, 92.7273, 108.182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgqur"]
+atlas = ExtResource("6_uvrdl")
+region = Rect2(525.172, 148.583, 116.112, 117.478)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdtgm"]
+atlas = ExtResource("6_uvrdl")
+region = Rect2(539.66, 435.34, 104.06, 122.21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktopj"]
+atlas = ExtResource("6_uvrdl")
+region = Rect2(211.046, 1.44102, 96.4615, 113.61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28cn8"]
+atlas = ExtResource("6_uvrdl")
+region = Rect2(0, 0, 111.187, 114.875)
+
+[sub_resource type="Animation" id="Animation_o5hg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image(7):rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.169297]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.67019, 0.797101)]
+}
+
+[sub_resource type="Animation" id="Animation_66q1m"]
+resource_name = "labels"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image(7):rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.169297, 0.169297]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.67019, 0.797101), Vector2(0.715415, 0.904215)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3cpes"]
+_data = {
+"RESET": SubResource("Animation_o5hg3"),
+"labels": SubResource("Animation_66q1m")
+}
+
+[node name="Bonus2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y2nna")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 303.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.703999, 0.83222)
+texture = ExtResource("2_b7a28")
+
+[node name="Barra" type="Sprite2D" parent="."]
+position = Vector2(368, 856)
+scale = Vector2(0.532161, 0.490585)
+texture = ExtResource("3_r3af6")
+region_enabled = true
+region_rect = Rect2(52.3586, 438.984, 1287.7, 79.4023)
+
+[node name="Panel" type="Sprite2D" parent="."]
+position = Vector2(362, 228)
+scale = Vector2(0.67019, 0.797101)
+texture = ExtResource("4_4poa1")
+
+[node name="Image(7)" type="Sprite2D" parent="."]
+position = Vector2(354, 508)
+rotation = -0.169297
+scale = Vector2(0.565517, 0.74317)
+texture = ExtResource("5_uwf03")
+offset = Vector2(-1.76831, -88.8088)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 935.0
+offset_right = 655.0
+offset_bottom = 1225.0
+theme_override_constants/h_separation = 37
+theme_override_constants/v_separation = 37
+columns = 4
+
+[node name="R" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_3wp28")
+stretch_mode = 0
+
+[node name="0" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_rghg1")
+ignore_texture_size = true
+stretch_mode = 1
+
+[node name="Arroba" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_3ei20")
+stretch_mode = 0
+
+[node name="B" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_swtd7")
+stretch_mode = 0
+
+[node name="O" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_tgqur")
+stretch_mode = 0
+
+[node name="#" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_xdtgm")
+stretch_mode = 0
+
+[node name="C" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ktopj")
+
+[node name="TextureButton" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_28cn8")
+
+[node name="HBoxContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 737.0
+offset_right = 449.0
+offset_bottom = 822.0
+scale = Vector2(1.38645, 1.42117)
+theme_override_constants/h_separation = 0
+columns = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3cpes")
+}
+autoplay = "labels"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 133.0
+offset_bottom = 106.0
+icon = ExtResource("8_fcrbg")
+flat = true
+expand_icon = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qsx33")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

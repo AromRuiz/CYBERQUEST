@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bs2m8ce7qtt6t"
+path="res://.godot/imported/Sonic 3 And Knuckles OST - Sky Sanctuary.mp3-18fd9f5a8218df862e92020145a51bba.mp3str"
+
+[deps]
+
+source_file="res://Recursos/audio/Sonic 3 And Knuckles OST - Sky Sanctuary.mp3"
+dest_files=["res://.godot/imported/Sonic 3 And Knuckles OST - Sky Sanctuary.mp3-18fd9f5a8218df862e92020145a51bba.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
