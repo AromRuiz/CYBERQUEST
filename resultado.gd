@@ -23,7 +23,7 @@ func fetch_puntaje_desde_bd():
 	var http = HTTPRequest.new()
 	add_child(http)
 	http.request_completed.connect(_on_http_puntaje_completado)
-	var url = "http://localhost:4000/mis-puntajes/%d" % JuegoState.id_usuario
+	var url = "http://api-2-production-12c8.up.railway.app/mis-puntajes/%d" % JuegoState.id_usuario
 	http.request(url)
 
 func _on_http_puntaje_completado(_result, code, _headers, body):

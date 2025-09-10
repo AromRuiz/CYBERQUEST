@@ -6,7 +6,7 @@ var tema_label = preload("res://Recursos/fuentes/tema_ranking.tres")
 func _ready():
 	add_child(http_request)
 	http_request.request_completed.connect(_on_request_completed)
-	http_request.request("http://localhost:4000/ranking")
+	http_request.request("http://api-2-production-12c8.up.railway.app/ranking")
 
 func _on_request_completed(result, response_code, headers, body):
 	if response_code != 200:
