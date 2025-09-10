@@ -101,7 +101,7 @@ func _enviar_puntaje_y_esperar(p_puntos: int, p_modulo: int):
 		"puntaje":    p_puntos
 	}
 	var err := http.request(
-		"http://api-2-production-12c8.up.railway.app/puntajes",
+		"https://api-2-production-12c8.up.railway.app/puntajes",
 		["Content-Type: application/json"],
 		HTTPClient.METHOD_POST,
 		JSON.stringify(cuerpo)

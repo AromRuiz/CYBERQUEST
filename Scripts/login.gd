@@ -16,7 +16,7 @@ func _on_login_button_pressed() -> void:
 	var json_data = JSON.stringify(body)
 
 	http_request.request_raw(
-		"http://api-2-production-12c8.up.railway.app/login",
+		"https://api-2-production-12c8.up.railway.app/login",
 		["Content-Type: application/json"],
 		HTTPClient.METHOD_POST,
 		json_data.to_utf8_buffer()

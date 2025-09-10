@@ -25,7 +25,7 @@ func _seleccionar_mascota(tipo: String):
 		"mascota": tipo
 	}
 	http.request(
-		"http://api-2-production-12c8.up.railway.app/guardar_mascota",
+		"https://api-2-production-12c8.up.railway.app/guardar_mascota",
 		["Content-Type: application/json"],
 		HTTPClient.METHOD_POST,
 		JSON.stringify(cuerpo)
