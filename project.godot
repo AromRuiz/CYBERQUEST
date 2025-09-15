@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Proyecto Tesis"
 run/main_scene="res://Bienvenida.tscn"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
@@ -21,6 +22,7 @@ Preguntas="*res://Scripts/preguntas.gd"
 JuegoState="*res://Scripts/JuegoState.gd"
 AudioManagers="*res://Scripts/AudioManager.gd"
 OpcionesAudio="*res://OpcionesAudio.tscn"
+BackHandle="res://back_handle.gd"
 
 [display]
 

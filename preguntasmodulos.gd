@@ -23,3 +23,7 @@ func animar_agrandar_achicar(boton):
 
 func _on_button_pressed() -> void:
 	OpcionesAudio.show()
+
+
+func _on_button_atras_pressed() -> void:
+	get_tree().change_scene_to_file("res://interfaz_pre_juego.tscn")

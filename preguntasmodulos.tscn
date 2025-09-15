@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dcew6x5gjxhvt"]
+[gd_scene load_steps=26 format=3 uid="uid://dcew6x5gjxhvt"]
 
 [ext_resource type="Script" path="res://preguntasmodulos.gd" id="1_155ea"]
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="1_vt4us"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://vjy5c2l8t6bt" path="res://Recursos/Botones/ISLAS/I8.png" id="11_40vys"]
 [ext_resource type="Texture2D" uid="uid://vokanwgk54w3" path="res://Recursos/sprites/nube.png" id="12_jm3is"]
 [ext_resource type="Texture2D" uid="uid://dvbajscus7jnt" path="res://Recursos/Botones/buttonaudion.png" id="15_7yjvb"]
+[ext_resource type="Texture2D" uid="uid://b2atketvutvfi" path="res://Recursos/Botones/BO/back.png" id="16_0hq84"]
 
 [sub_resource type="Animation" id="Animation_a1chh"]
 length = 0.001
@@ -359,10 +360,10 @@ flat = true
 
 [node name="Button" type="Button" parent="ScrollContainer/TextureRect"]
 layout_mode = 0
-offset_left = -17.2839
-offset_top = 14.1179
-offset_right = 109.716
-offset_bottom = 112.118
+offset_left = 895.886
+offset_top = 8.06738
+offset_right = 1022.89
+offset_bottom = 106.067
 icon = ExtResource("15_7yjvb")
 flat = true
 expand_icon = true
@@ -372,4 +373,15 @@ stream = ExtResource("11_12set")
 autoplay = true
 bus = &"Music"
 
+[node name="Button atras" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 132.0
+offset_bottom = 91.0
+icon = ExtResource("16_0hq84")
+flat = true
+expand_icon = true
+
 [connection signal="pressed" from="ScrollContainer/TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button atras" to="." method="_on_button_atras_pressed"]

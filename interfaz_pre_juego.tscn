@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c0xce73amgrq3"]
+[gd_scene load_steps=58 format=3 uid="uid://c0xce73amgrq3"]
 
 [ext_resource type="Script" path="res://interfaz_pre_juego.gd" id="1_4m82r"]
 [ext_resource type="Texture2D" uid="uid://blb7wh6aw5cmi" path="res://Recursos/sprites/9432df3a-1675-4824-9fa8-78f755dcd038.png" id="2_1k0yh"]
@@ -9,9 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://dy2jrklj6usat" path="res://Recursos/sprites/phone litlle.png" id="5_e7hq0"]
 [ext_resource type="Texture2D" uid="uid://boxo0xeweyjrd" path="res://Recursos/sprites/latop little.png" id="6_23u82"]
 [ext_resource type="FontFile" uid="uid://b5004m857mone" path="res://Recursos/fuentes/Kenney Pixel Square.ttf" id="6_g2mgm"]
+[ext_resource type="Texture2D" uid="uid://u1omrwje8qgk" path="res://Recursos/sprites/pc intermedio.png" id="7_k45t7"]
 [ext_resource type="FontFile" uid="uid://h0lcg2ndmnti" path="res://Recursos/fuentes/Kenney Blocks.ttf" id="7_tt3lb"]
 [ext_resource type="AudioStream" uid="uid://3iu2ouhpn36t" path="res://Recursos/audio/Super Mario 64 Soundtrack - Dire, Dire Docks.mp3" id="8_ox1wb"]
+[ext_resource type="Texture2D" uid="uid://dlyg478f4sr82" path="res://Recursos/sprites/lap_intermedio.png" id="8_rk7li"]
 [ext_resource type="Texture2D" uid="uid://dgqjtxujgq4ip" path="res://Recursos/Botones/BO/ranbutton.png" id="8_wdbyd"]
+[ext_resource type="Texture2D" uid="uid://07gx12gpmpx8" path="res://Recursos/sprites/cel_intermedio.png" id="9_h3hck"]
+[ext_resource type="Texture2D" uid="uid://bwjeueui7bfbr" path="res://Recursos/sprites/pc adulto.png" id="10_fyd7g"]
+[ext_resource type="Texture2D" uid="uid://csle0iue4qug" path="res://Recursos/sprites/lap_adulta.png" id="11_b01m2"]
+[ext_resource type="Texture2D" uid="uid://01ipx4g22uty" path="res://Recursos/sprites/cel adulto.png" id="12_pygve"]
 [ext_resource type="Texture2D" uid="uid://b2atketvutvfi" path="res://Recursos/Botones/BO/back.png" id="13_pw6xe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_836o2"]
@@ -110,6 +116,152 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r76cm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaptx"]
+atlas = ExtResource("7_k45t7")
+region = Rect2(0, 357, 281, 357)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpqe1"]
+atlas = ExtResource("7_k45t7")
+region = Rect2(562, 357, 281, 357)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xajcn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaptx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpqe1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty6fn"]
+atlas = ExtResource("8_rk7li")
+region = Rect2(352, 384, 352, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwxag"]
+atlas = ExtResource("8_rk7li")
+region = Rect2(0, 384, 352, 384)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lgyun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty6fn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwxag")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvg1h"]
+atlas = ExtResource("9_h3hck")
+region = Rect2(267, 0, 267, 302)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh62a"]
+atlas = ExtResource("9_h3hck")
+region = Rect2(267, 302, 267, 302)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pts8i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvg1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh62a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iax6e"]
+atlas = ExtResource("10_fyd7g")
+region = Rect2(0, 0, 288, 351)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7boq"]
+atlas = ExtResource("10_fyd7g")
+region = Rect2(0, 351, 288, 351)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1rb1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iax6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7boq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uftuq"]
+atlas = ExtResource("11_b01m2")
+region = Rect2(243, 12, 236, 223)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuro3"]
+atlas = ExtResource("11_b01m2")
+region = Rect2(479, 12, 236, 223)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpitv"]
+atlas = ExtResource("11_b01m2")
+region = Rect2(951, 12, 236, 223)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_clivt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uftuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuro3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpitv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdjkk"]
+atlas = ExtResource("12_pygve")
+region = Rect2(0, 286, 232, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju4o2"]
+atlas = ExtResource("12_pygve")
+region = Rect2(233, 255, 232, 306)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_051hf"]
+atlas = ExtResource("12_pygve")
+region = Rect2(464, 286, 232, 286)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwqls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdjkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju4o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_051hf")
 }],
 "loop": true,
 "name": &"default",
@@ -255,6 +407,54 @@ scale = Vector2(4.26198, 3.19173)
 sprite_frames = SubResource("SpriteFrames_mg538")
 autoplay = "default"
 frame_progress = 0.495623
+
+[node name="compu_intermedio" type="AnimatedSprite2D" parent="TextureRect"]
+visible = false
+position = Vector2(493.517, 757.544)
+scale = Vector2(2.20568, 1.6232)
+sprite_frames = SubResource("SpriteFrames_xajcn")
+autoplay = "default"
+frame_progress = 0.98839
+
+[node name="laptop_intermedio" type="AnimatedSprite2D" parent="TextureRect"]
+visible = false
+position = Vector2(487.117, 722.128)
+scale = Vector2(1.57174, 1.54758)
+sprite_frames = SubResource("SpriteFrames_lgyun")
+autoplay = "default"
+
+[node name="celular_intermedio" type="AnimatedSprite2D" parent="TextureRect"]
+visible = false
+position = Vector2(550.407, 749.14)
+scale = Vector2(2.27452, 1.64181)
+sprite_frames = SubResource("SpriteFrames_pts8i")
+autoplay = "default"
+
+[node name="compu_adulto" type="AnimatedSprite2D" parent="TextureRect"]
+visible = false
+position = Vector2(553.251, 753.942)
+scale = Vector2(2.89386, 2.01459)
+sprite_frames = SubResource("SpriteFrames_1rb1u")
+autoplay = "default"
+frame_progress = 0.952236
+
+[node name="laptop_adulto" type="AnimatedSprite2D" parent="TextureRect"]
+visible = false
+position = Vector2(512.007, 713.199)
+scale = Vector2(3.9654, 3.06798)
+sprite_frames = SubResource("SpriteFrames_clivt")
+autoplay = "default"
+frame = 2
+frame_progress = 0.489263
+
+[node name="celular_adulto" type="AnimatedSprite2D" parent="TextureRect"]
+visible = false
+position = Vector2(490.673, 793.56)
+scale = Vector2(3.99086, 3.20285)
+sprite_frames = SubResource("SpriteFrames_gwqls")
+autoplay = "default"
+frame = 1
+frame_progress = 0.739653
 
 [node name="Empezar" type="Button" parent="."]
 layout_mode = 0
