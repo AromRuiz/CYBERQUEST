@@ -1,8 +1,14 @@
 extends Control
+
 var preguntas = []
 var indice_actual = 0
 var puntos = 0
 var modulo = JuegoState.modulo_actual
+
+# Tiempo máximo por pregunta (segundos)
+var tiempo_max := 15
+var tiempo_restante := 0
+
 @onready var barra_animada = $barraprogreso
 @onready var pregunta_label = $FeedbackLabel/TextureRect/PreguntaLabel
 @onready var botones_opciones = [
@@ -14,9 +20,19 @@ var modulo = JuegoState.modulo_actual
 @onready var feedback_label = $FeedbackLabel
 @onready var img_correcto = $correcto
 @onready var img_incorrecto = $incorrecto
+
+# NUEVAS referencias
+@onready var temporizador = $TimerPregunta    # Timer en la escena (wait_time=1, one_shot=false)
+@onready var tiempo_label = $TiempoLabel     # Label para mostrar segundos restantes
+
 func _ready():
 	for i in range(botones_opciones.size()):
 		botones_opciones[i].pressed.connect(_on_opcion_presionada.bind(i))
+
+	# Conectar el Timer a un tick que reduce un segundo cada timeout
+	# (NO lo conectamos a _on_tiempo_acabado directamente)
+	temporizador.timeout.connect(_on_tick)
+
 	preguntas = cargar_preguntas(modulo)
 	mostrar_pregunta()
 
@@ -53,17 +69,55 @@ func mostrar_pregunta():
 		botones_opciones[i].text = pregunta_actual["opciones"][i]
 		botones_opciones[i].disabled = false
 		botones_opciones[i].release_focus()
+
 	get_viewport().set_input_as_handled()
 	feedback_label.text = ""
 
+	# Reiniciar temporizador: uso del Timer como "tick" de 1 segundo
+	tiempo_restante = tiempo_max
+	tiempo_label.text = str(tiempo_restante)
+
+	# Asegúrate en el editor que TimerPregunta.wait_time = 1.0 y one_shot = false
+	temporizador.wait_time = 1.0
+	temporizador.one_shot = false
+	temporizador.start()  # empieza a "hacer tick" cada segundo
+
+# Esta función se llama cada segundo por el Timer
+func _on_tick() -> void:
+	# reducir un segundo
+	tiempo_restante -= 1
+	if tiempo_restante <= 0:
+		tiempo_label.text = "0"
+		temporizador.stop()
+		# bloquear opciones para que no se pueda responder justo cuando se acabó
+		for b in botones_opciones:
+			b.disabled = true
+		_on_tiempo_acabado()
+	else:
+		tiempo_label.text = str(tiempo_restante)
+
+
 func _on_opcion_presionada(indice_presionado: int):
+	# Al responder, detener el temporizador para que no siga tickeando
+	if temporizador.is_stopped() == false:
+		temporizador.stop()
+
+	# bloquear botones inmediatamente para evitar doble click
+	for b in botones_opciones:
+		b.disabled = true
+
 	var correcta = preguntas[indice_actual]["respuesta_correcta"]
 	var es_correcta = (indice_presionado == correcta)
 
-	# Actualizar feedback textual y barra
 	if es_correcta:
-		puntos += 10
-		feedback_label.text = "¡Correcto! +10 puntos"
+		# Puntaje base
+		var puntos_base = 10
+		# Bonus por rapidez (ejemplo: 0.5 puntos por segundo restante)
+		var bonus = int(tiempo_restante * 0.5)
+		var puntos_ganados = puntos_base + bonus
+		puntos += puntos_ganados
+
+		feedback_label.text = "¡Correcto! +" + str(puntos_ganados) + " puntos"
 		barra_animada.actualizar_barra(true)
 		img_correcto.visible = true
 	else:
@@ -77,9 +131,21 @@ func _on_opcion_presionada(indice_presionado: int):
 	indice_actual += 1
 	mostrar_pregunta()
 
+func _on_tiempo_acabado():
+	# Aquí tratamos el caso de tiempo agotado (ya puede llamarse desde _on_tick)
+	feedback_label.text = "Tiempo agotado"
+	barra_animada.actualizar_barra(false)
+	img_incorrecto.visible = true
+
+	await get_tree().create_timer(1.2).timeout
+	img_incorrecto.visible = false
+	indice_actual += 1
+	mostrar_pregunta()
+
 func finalizar_modulo(): 
 	JuegoState.puntos = puntos
 	_enviar_puntaje_y_esperar(puntos, JuegoState.modulo_actual)
+
 
 func _enviar_puntaje_y_esperar(p_puntos: int, p_modulo: int):
 	# 1) Validación sencilla
@@ -128,7 +194,7 @@ func _on_puntaje_guardado(
 	else:
 		push_error("Falló guardar puntaje, HTTP %d" % response_code)
 	get_tree().change_scene_to_file("res://resultado.tscn")
-
+	
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://preguntasmodulos.tscn")
