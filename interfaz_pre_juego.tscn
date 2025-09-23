@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://c0xce73amgrq3"]
+[gd_scene load_steps=59 format=3 uid="uid://c0xce73amgrq3"]
 
 [ext_resource type="Script" path="res://interfaz_pre_juego.gd" id="1_4m82r"]
 [ext_resource type="Texture2D" uid="uid://blb7wh6aw5cmi" path="res://Recursos/sprites/9432df3a-1675-4824-9fa8-78f755dcd038.png" id="2_1k0yh"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://csle0iue4qug" path="res://Recursos/sprites/lap_adulta.png" id="11_b01m2"]
 [ext_resource type="Texture2D" uid="uid://01ipx4g22uty" path="res://Recursos/sprites/cel adulto.png" id="12_pygve"]
 [ext_resource type="Texture2D" uid="uid://b2atketvutvfi" path="res://Recursos/Botones/BO/back.png" id="13_pw6xe"]
+[ext_resource type="Texture2D" uid="uid://bxcu375rt2kaw" path="res://Recursos/Botones/BO/bonusbutton.png" id="20_85ydv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_836o2"]
 atlas = ExtResource("2_1k0yh")
@@ -515,6 +516,17 @@ icon = ExtResource("13_pw6xe")
 flat = true
 expand_icon = true
 
+[node name="Botonbonus" type="Button" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 1062.0
+offset_right = 539.0
+offset_bottom = 1215.0
+icon = ExtResource("20_85ydv")
+flat = true
+expand_icon = true
+
 [connection signal="pressed" from="Empezar" to="." method="_on_empezar_pressed"]
 [connection signal="pressed" from="BotonTabla" to="." method="_on_boton_tabla_pressed"]
 [connection signal="pressed" from="Buttonregresar" to="." method="_on_buttonregresar_pressed"]
+[connection signal="pressed" from="Botonbonus" to="." method="_on_botonbonus_pressed"]

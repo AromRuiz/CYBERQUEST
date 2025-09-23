@@ -28,7 +28,7 @@ func _on_opcion_seleccionada(boton):
 		if _es_correcto():
 			print("¡Correcto! +20 puntos")
 			JuegoState.puntos += 20
-			_enviar_puntaje_y_esperar(20, JuegoState.modulo_actual)
+			_enviar_puntaje_y_esperar(JuegoState.puntos, JuegoState.modulo_actual)
 		else:
 			print("Incorrecto, intenta de nuevo")
 			reiniciar()
@@ -57,7 +57,7 @@ func _enviar_puntaje_y_esperar(p_puntos: int, p_modulo: int):
 	var timer := get_tree().create_timer(5.0)
 	timer.timeout.connect(func():
 		if is_instance_valid(self):
-			print("⚠️ Timeout al guardar puntaje (bonus), continuando...")
+			print("Timeout al guardar puntaje (bonus), continuando...")
 			_ir_a_resultado()
 	)
 
@@ -90,7 +90,7 @@ func _on_puntaje_guardado(
 			break
 
 	if response_code == 200:
-		print("✅ Puntaje bonus guardado con éxito")
+		print("Puntaje bonus guardado con éxito")
 	else:
 		push_error("Falló guardar puntaje (bonus), HTTP %d" % response_code)
 
@@ -103,3 +103,7 @@ func _ir_a_resultado():
 
 func _on_button_pressed() -> void:
 	OpcionesAudio.show()
+
+
+func _on_button_atras_pressed() -> void:
+	get_tree().change_scene_to_file("res://bonus_seleccion.tscn")

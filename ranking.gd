@@ -20,7 +20,7 @@ func _on_request_completed(result, response_code, headers, body):
 
 	for entry in json["data"]:
 		var label = Label.new()
-		label.text = "%s - %d puntos (Módulo %d)" % [
+		label.text = "%s - %d   puntos   (Módulo %d)" % [
 			entry["nombre"],
 			entry["puntaje"],
 			entry["modulo"]

@@ -91,5 +91,5 @@ func _on_buttonregresar_pressed() -> void:
 	get_tree().change_scene_to_file("res://login.tscn")
 
 
-func _on_button_bonus_pressed() -> void:
-	pass # Replace with function body.
+func _on_botonbonus_pressed() -> void:
+	get_tree().change_scene_to_file("res://bonus_seleccion.tscn")

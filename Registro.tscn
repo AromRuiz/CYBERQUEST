@@ -69,8 +69,9 @@ offset_left = 369.84
 offset_top = 703.116
 offset_right = 674.84
 offset_bottom = 775.116
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("4_hc03k")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 
 [node name="Label2" type="Sprite2D" parent="TextureRect"]
 position = Vector2(519.198, 863.897)
@@ -92,6 +93,8 @@ offset_left = 369.84
 offset_top = 985.082
 offset_right = 674.84
 offset_bottom = 1057.08
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
 secret = true
 
 [node name="Label3" type="Sprite2D" parent="TextureRect"]
@@ -126,10 +129,10 @@ expand_icon = true
 [node name="error_label" type="Label" parent="TextureRect"]
 visible = false
 layout_mode = 0
-offset_left = 141.0
-offset_top = 602.0
-offset_right = 571.0
-offset_bottom = 760.0
+offset_left = 311.519
+offset_top = 151.182
+offset_right = 741.519
+offset_bottom = 309.182
 label_settings = SubResource("LabelSettings_axek8")
 horizontal_alignment = 1
 vertical_alignment = 1

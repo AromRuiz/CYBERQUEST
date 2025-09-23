@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cq36ahrxldjaf"]
+[gd_scene load_steps=22 format=3 uid="uid://cq36ahrxldjaf"]
 
 [ext_resource type="Script" path="res://Recursos/fuentes/bonus_1.gd" id="1_er73y"]
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="1_r5wk6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c2v3xt7exrnui" path="res://Recursos/Fondos/NUEVOSLAYERS/numeros.png" id="7_o2i6c"]
 [ext_resource type="AudioStream" uid="uid://bs2m8ce7qtt6t" path="res://Recursos/audio/Sonic 3 And Knuckles OST - Sky Sanctuary.mp3" id="8_8uph1"]
 [ext_resource type="Texture2D" uid="uid://dvbajscus7jnt" path="res://Recursos/Botones/buttonaudion.png" id="9_fh5h8"]
+[ext_resource type="Texture2D" uid="uid://b2atketvutvfi" path="res://Recursos/Botones/BO/back.png" id="10_tqp6s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7u6jy"]
 atlas = ExtResource("7_o2i6c")
@@ -264,12 +265,23 @@ autoplay = "layers"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 8.0
-offset_right = 133.0
-offset_bottom = 106.0
+offset_left = 576.0
+offset_top = 12.0
+offset_right = 703.0
+offset_bottom = 110.0
 icon = ExtResource("9_fh5h8")
 flat = true
 expand_icon = true
 
+[node name="Button atras" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.112
+offset_top = 0.83222
+offset_right = 130.112
+offset_bottom = 90.8322
+icon = ExtResource("10_tqp6s")
+flat = true
+expand_icon = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button atras" to="." method="_on_button_atras_pressed"]

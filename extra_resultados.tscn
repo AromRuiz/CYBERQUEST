@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3ug7nlk2fbst"]
+[gd_scene load_steps=11 format=3 uid="uid://b3ug7nlk2fbst"]
 
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="1_4t8di"]
+[ext_resource type="Script" path="res://extra_resultados.gd" id="1_uonyi"]
 [ext_resource type="Texture2D" uid="uid://c22yr2k4venr3" path="res://Recursos/sprites/compu like.png" id="2_swum6"]
 [ext_resource type="Texture2D" uid="uid://eysum517yauw" path="res://Recursos/Fondos/NUEVOSLAYERS/EXCELENTE.png" id="3_7evqr"]
+[ext_resource type="FontFile" uid="uid://h0lcg2ndmnti" path="res://Recursos/fuentes/Kenney Blocks.ttf" id="5_oxhwy"]
+[ext_resource type="Texture2D" uid="uid://dga6q2eiwrq72" path="res://Recursos/Botones/BO/Menubuton.png" id="6_jfbiq"]
+[ext_resource type="Texture2D" uid="uid://dgqjtxujgq4ip" path="res://Recursos/Botones/BO/ranbutton.png" id="7_qk7h7"]
 
 [sub_resource type="Animation" id="Animation_kwm8l"]
 length = 0.5
@@ -54,6 +58,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0.439316, 0.485437), Vector2(0.521368, 0.660194), Vector2(0.613675, 0.864078)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../BotonTabla:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.174533, 0.0, 0.174533]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../BotonMenu:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.174533, 0.0, 0.174533]
 }
 
 [sub_resource type="Animation" id="Animation_oum0c"]
@@ -121,6 +149,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uonyi")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -147,3 +176,45 @@ autoplay = "RESET"
 position = Vector2(360, 864)
 scale = Vector2(0.439316, 0.485437)
 texture = ExtResource("3_7evqr")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BotonMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 1063.0
+offset_right = 752.0
+offset_bottom = 1230.0
+rotation = -0.174533
+pivot_offset = Vector2(183.5, 132)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_oxhwy")
+theme_override_font_sizes/font_size = 40
+icon = ExtResource("6_jfbiq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BotonTabla" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 1061.0
+offset_right = 396.0
+offset_bottom = 1230.0
+rotation = -0.174533
+pivot_offset = Vector2(186, 117)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_oxhwy")
+theme_override_font_sizes/font_size = 40
+icon = ExtResource("7_qk7h7")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="BotonMenu" to="." method="_on_boton_menu_pressed"]
+[connection signal="pressed" from="BotonTabla" to="." method="_on_boton_tabla_pressed"]
