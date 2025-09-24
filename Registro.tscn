@@ -100,7 +100,7 @@ theme_override_font_sizes/font_size = 30
 secret = true
 
 [node name="Label3" type="Sprite2D" parent="TextureRect"]
-position = Vector2(530.578, 387.554)
+position = Vector2(526.311, 387.554)
 scale = Vector2(1.0587, 0.881945)
 texture = ExtResource("6_p5obk")
 region_enabled = true
