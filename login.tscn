@@ -32,6 +32,7 @@ texture = ExtResource("2_w2ija")
 metadata/_edit_lock_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,6 +49,7 @@ scale = Vector2(0.452482, 0.452482)
 texture = ExtResource("3_vmhth")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect"]
+visible = false
 modulate = Color(0.593, 0.867, 0.902, 0.184)
 layout_mode = 1
 anchors_preset = 8

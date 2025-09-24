@@ -31,6 +31,7 @@ scale = Vector2(0.703007, 0.833433)
 texture = ExtResource("2_pcedv")
 
 [node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -47,6 +48,7 @@ scale = Vector2(0.452482, 0.452482)
 texture = ExtResource("2_x0dw3")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect"]
+visible = false
 modulate = Color(0.593, 0.867, 0.902, 0.184)
 layout_mode = 1
 anchors_preset = 8

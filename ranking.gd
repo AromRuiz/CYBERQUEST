@@ -25,8 +25,14 @@ func _on_request_completed(result, response_code, headers, body):
 			entry["puntaje"],
 			entry["modulo"]
 		]
-		label.theme = tema_label
-		ranking_lista.add_child(label)
+		var fuente_base = tema_label.get_font("font", "Label")
+		if fuente_base:
+			var fuente_variada = FontVariation.new()
+			fuente_variada.base_font = fuente_base
+			fuente_variada.spacing_glyph = 6 
+			label.add_theme_font_override("font", fuente_variada)
+			label.theme = tema_label
+			ranking_lista.add_child(label)
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://interfaz_pre_juego.tscn")
