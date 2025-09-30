@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq1ecp8vx5b12"]
+
+[ext_resource type="Texture2D" uid="uid://cjdnpf7owyvk4" path="res://Recursos/Fondos/NUEVOSLAYERS/fondowhack.png" id="1_e1aha"]
+[ext_resource type="Texture2D" uid="uid://xwo1ip72yumk" path="res://Recursos/Fondos/NUEVOSLAYERS/fondo hole.png" id="2_6csct"]
+[ext_resource type="Texture2D" uid="uid://dbjwufram706k" path="res://Recursos/Botones/BO/groo.png" id="3_rktxh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fondowhack" type="Sprite2D" parent="."]
+position = Vector2(367, 543)
+scale = Vector2(1.7343, 2.00528)
+texture = ExtResource("1_e1aha")
+
+[node name="FondoHole" type="Sprite2D" parent="."]
+position = Vector2(364, 888.75)
+scale = Vector2(1.50467, 1.42487)
+texture = ExtResource("2_6csct")
+
+[node name="Botones" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 578.0
+offset_right = 942.0
+offset_bottom = 2425.0
+scale = Vector2(0.700602, 0.377286)
+columns = 2
+
+[node name="Button" type="Button" parent="Botones"]
+layout_mode = 2
+icon = ExtResource("3_rktxh")
+flat = true
+
+[node name="Button2" type="Button" parent="Botones"]
+layout_mode = 2
+icon = ExtResource("3_rktxh")
+flat = true
+
+[node name="Button3" type="Button" parent="Botones"]
+layout_mode = 2
+icon = ExtResource("3_rktxh")
+flat = true
+
+[node name="Button4" type="Button" parent="Botones"]
+layout_mode = 2
+icon = ExtResource("3_rktxh")
+flat = true
+
+[node name="Button5" type="Button" parent="Botones"]
+layout_mode = 2
+icon = ExtResource("3_rktxh")
+flat = true
+
+[node name="Button6" type="Button" parent="Botones"]
+layout_mode = 2
+icon = ExtResource("3_rktxh")
+flat = true

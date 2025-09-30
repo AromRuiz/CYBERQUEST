@@ -20,10 +20,8 @@ var tiempo_restante := 0
 @onready var feedback_label = $FeedbackLabel
 @onready var img_correcto = $correcto
 @onready var img_incorrecto = $incorrecto
-
-# NUEVAS referencias
-@onready var temporizador = $TimerPregunta    # Timer en la escena (wait_time=1, one_shot=false)
-@onready var tiempo_label = $TiempoLabel     # Label para mostrar segundos restantes
+@onready var temporizador = $TimerPregunta
+@onready var tiempo_label = $TiempoLabel
 
 func _ready():
 	for i in range(botones_opciones.size()):
