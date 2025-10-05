@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c475epjrtcusw"]
+[gd_scene load_steps=21 format=3 uid="uid://c475epjrtcusw"]
 
 [ext_resource type="Script" path="res://resultado.gd" id="1_hc02v"]
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="2_gg7gs"]
@@ -16,92 +16,34 @@ font_size = 29
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_c5sjv"]
-resource_name = "PC"
-length = 15.0
-loop_mode = 1
-step = 1.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 1, 1.76293, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 0, 3, 0, 1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3, 4, 5, 6, 7.04278, 9, 10, 10.8995, 11.8995, 12.9677, 13.9677),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.826172), Vector2(1, 1), Vector2(1, 0.826172), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.826172), Vector2(1, 1), Vector2(1, 0.826172), Vector2(1, 1), Vector2(1, 0.826172)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3, 4, 5, 6, 7.04278, 9, 10, 10.8995, 11.8995, 12.9677, 13.9677),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(372, 600), Vector2(372, 600), Vector2(372, 624.5), Vector2(372, 580), Vector2(372, 624.5), Vector2(372, 580), Vector2(372, 580), Vector2(372, 624.5), Vector2(372, 580), Vector2(372, 624.5), Vector2(372, 580), Vector2(372, 624.5)]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_celpn"]
+atlas = ExtResource("7_rhfq1")
+region = Rect2(0, 0, 341, 512)
 
-[sub_resource type="Animation" id="Animation_3ailk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(372, 580)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 0.822266)]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xxut"]
+atlas = ExtResource("7_rhfq1")
+region = Rect2(0, 512, 341, 512)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gqadw"]
-_data = {
-"PC": SubResource("Animation_c5sjv"),
-"RESET": SubResource("Animation_3ailk")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_dynbq"]
+atlas = ExtResource("7_rhfq1")
+region = Rect2(696, 0, 328, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a5udh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_celpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xxut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dynbq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="Animation" id="Animation_0opsn"]
 loop_mode = 2
@@ -163,6 +105,28 @@ _data = {
 "RESET": SubResource("Animation_0opsn"),
 "botones": SubResource("Animation_t2y28")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0qvi"]
+atlas = ExtResource("7_rhfq1")
+region = Rect2(366, 0, 290, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2e1u"]
+atlas = ExtResource("7_rhfq1")
+region = Rect2(357, 461, 281, 461)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fxbrh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0qvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2e1u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Resultado" type="Control"]
 layout_mode = 3
@@ -254,19 +218,11 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(372, 580)
-scale = Vector2(1, 0.822266)
-texture = ExtResource("7_rhfq1")
-hframes = 3
-vframes = 2
-frame = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
-libraries = {
-"": SubResource("AnimationLibrary_gqadw")
-}
-autoplay = "PC"
+[node name="Happy" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(372, 600)
+sprite_frames = SubResource("SpriteFrames_a5udh")
+autoplay = "default"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_qtxl0")
@@ -277,3 +233,10 @@ libraries = {
 "": SubResource("AnimationLibrary_1f5nc")
 }
 autoplay = "RESET"
+
+[node name="Sad" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(384, 600)
+sprite_frames = SubResource("SpriteFrames_fxbrh")
+autoplay = "default"
+frame_progress = 0.637072

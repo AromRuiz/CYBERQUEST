@@ -7,6 +7,8 @@ extends Control
 ]
 @onready var boton_menu = $BotonMenu
 @onready var boton_tabla = $BotonTabla
+@onready var anim_happy = $Happy
+@onready var anim_sad = $Sad
 
 func _ready():
 	fetch_puntaje_desde_bd()
@@ -47,6 +49,10 @@ func mostrar_estrellas(puntos: int):
 		tween.tween_property(estrellas[i], "modulate:a", 1.0, 0.6).set_delay(i * 0.4)
 	for i in range(cantidad, estrellas.size()):
 		estrellas[i].modulate = Color(0.5, 0.5, 0.5, 0.4)
+	if cantidad <= 1:
+		anim_sad.show()
+	else:
+		anim_happy.show()
 
 func calcular_estrellas(puntos: int) -> int:
 	if puntos >= 30:

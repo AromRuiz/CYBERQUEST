@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfxwv4egdop1o"]
+[gd_scene load_steps=13 format=3 uid="uid://cfxwv4egdop1o"]
 
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="1_0i037"]
 [ext_resource type="Script" path="res://bonus_seleccion.gd" id="1_j6e7j"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bq1hlyethgxig" path="res://Recursos/Fondos/NUEVOSLAYERS/levelselectsquare.png" id="3_4yh1i"]
 [ext_resource type="FontFile" uid="uid://c7168u6k4c7jj" path="res://Recursos/fuentes/kirifont/KiriFont.otf" id="4_2l2jf"]
 [ext_resource type="Texture2D" uid="uid://b2atketvutvfi" path="res://Recursos/Botones/BO/back.png" id="6_hevs4"]
+[ext_resource type="AudioStream" uid="uid://5y4vebiccrei" path="res://Recursos/audio/[OST] Super Mario Maker - Title Screen.mp3" id="7_o1rnc"]
+[ext_resource type="Texture2D" uid="uid://dvbajscus7jnt" path="res://Recursos/Botones/buttonaudion.png" id="8_rg4ey"]
 
 [sub_resource type="Animation" id="Animation_ennwt"]
 length = 0.001
@@ -147,6 +149,51 @@ icon = ExtResource("6_hevs4")
 flat = true
 expand_icon = true
 
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 656.0
+offset_right = 260.0
+offset_bottom = 882.0
+icon = ExtResource("3_4yh1i")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Button3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = SubResource("LabelSettings_rh21p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_o1rnc")
+autoplay = true
+bus = &"Music"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 4.0
+offset_right = 710.0
+offset_bottom = 129.0
+icon = ExtResource("8_rg4ey")
+flat = true
+expand_icon = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button atras" to="." method="_on_button_atras_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

@@ -175,3 +175,4 @@ expand_icon = true
 [connection signal="pressed" from="computadora" to="." method="_on_computadora_pressed"]
 [connection signal="pressed" from="laptop" to="." method="_on_laptop_pressed"]
 [connection signal="pressed" from="celular" to="." method="_on_celular_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

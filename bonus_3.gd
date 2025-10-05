@@ -31,9 +31,9 @@ func _ready():
 
 func _on_button_pressed(button: TextureButton):
 	if button.get_meta("is_enemy", true):
-		score += 10
+		score += 5
 	else:
-		score = max(0, score - 5)  # penalización si golpea amigo
+		score = max(0, score - 2)
 
 	print("Puntaje actual:", score)
 	button.hide()

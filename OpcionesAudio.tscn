@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://byfbcc0bqqw2e"]
 
 [ext_resource type="Script" path="res://OpcionesAudio.gd" id="1_dlage"]
-[ext_resource type="Texture2D" uid="uid://budpfc8mras0r" path="res://Recursos/Fondos/optionmenu.png" id="2_xwi0c"]
+[ext_resource type="Texture2D" uid="uid://8silrwusqju5" path="res://Recursos/Fondos/menudeopciones.png" id="2_1jais"]
 [ext_resource type="FontFile" uid="uid://dytmmui3r1ad4" path="res://Recursos/fuentes/kirifont/KiriFont.ttf" id="3_q42kd"]
 [ext_resource type="Script" path="res://music_slider.gd" id="4_itecy"]
 
@@ -22,7 +22,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 380.0
 grow_horizontal = 2
-texture = ExtResource("2_xwi0c")
+texture = ExtResource("2_1jais")
 expand_mode = 1
 
 [node name="Cerrar" type="Button" parent="TextureRect"]
