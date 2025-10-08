@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://c0xce73amgrq3"]
+[gd_scene load_steps=65 format=3 uid="uid://c0xce73amgrq3"]
 
 [ext_resource type="Script" path="res://interfaz_pre_juego.gd" id="1_4m82r"]
 [ext_resource type="Texture2D" uid="uid://blb7wh6aw5cmi" path="res://Recursos/sprites/9432df3a-1675-4824-9fa8-78f755dcd038.png" id="2_1k0yh"]
@@ -18,8 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://bwjeueui7bfbr" path="res://Recursos/sprites/pc adulto.png" id="10_fyd7g"]
 [ext_resource type="Texture2D" uid="uid://csle0iue4qug" path="res://Recursos/sprites/lap_adulta.png" id="11_b01m2"]
 [ext_resource type="Texture2D" uid="uid://01ipx4g22uty" path="res://Recursos/sprites/cel adulto.png" id="12_pygve"]
-[ext_resource type="Texture2D" uid="uid://b2atketvutvfi" path="res://Recursos/Botones/BO/back.png" id="13_pw6xe"]
 [ext_resource type="Texture2D" uid="uid://bxcu375rt2kaw" path="res://Recursos/Botones/BO/bonusbutton.png" id="20_85ydv"]
+[ext_resource type="Texture2D" uid="uid://dbxetw62iv8ka" path="res://Recursos/Fondos/NUEVOSLAYERS/confirmacion.png" id="20_gv7hv"]
+[ext_resource type="Texture2D" uid="uid://dr5ra8welr15o" path="res://Recursos/Botones/BO/botonaceptar.png" id="21_fwtof"]
+[ext_resource type="Texture2D" uid="uid://cuk1ljwud7jwt" path="res://Recursos/Botones/BO/botonno.png" id="22_lh8hg"]
+[ext_resource type="Texture2D" uid="uid://bi1ci7x707k0m" path="res://Recursos/Botones/BO/botoncerrar.png" id="23_gsnsj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_836o2"]
 atlas = ExtResource("2_1k0yh")
@@ -361,6 +364,44 @@ _data = {
 "rankingboton": SubResource("Animation_5qxx4")
 }
 
+[sub_resource type="Animation" id="Animation_f44hk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelConfirmacion:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.208374, 0.403973)]
+}
+
+[sub_resource type="Animation" id="Animation_c1avq"]
+resource_name = "cerrar"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelConfirmacion:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cc05i"]
+_data = {
+"RESET": SubResource("Animation_f44hk"),
+"cerrar": SubResource("Animation_c1avq")
+}
+
 [node name="InterfazPreJuego" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -508,14 +549,6 @@ libraries = {
 }
 autoplay = "RESET"
 
-[node name="Buttonregresar" type="Button" parent="."]
-layout_mode = 0
-offset_right = 137.0
-offset_bottom = 106.0
-icon = ExtResource("13_pw6xe")
-flat = true
-expand_icon = true
-
 [node name="Botonbonus" type="Button" parent="."]
 layout_mode = 0
 offset_left = 160.0
@@ -526,7 +559,57 @@ icon = ExtResource("20_85ydv")
 flat = true
 expand_icon = true
 
+[node name="LabelConfirmacion" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 35.0
+offset_top = 296.0
+offset_right = 689.0
+offset_bottom = 659.0
+scale = Vector2(0.208374, 0.403973)
+pivot_offset = Vector2(327, 181.5)
+texture = ExtResource("20_gv7hv")
+expand_mode = 1
+
+[node name="ButonSi" type="Button" parent="LabelConfirmacion"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 307.0
+offset_right = 209.0
+offset_bottom = 413.0
+icon = ExtResource("21_fwtof")
+flat = true
+expand_icon = true
+
+[node name="ButonNo" type="Button" parent="LabelConfirmacion"]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 311.0
+offset_right = 622.0
+offset_bottom = 417.0
+icon = ExtResource("22_lh8hg")
+flat = true
+expand_icon = true
+
+[node name="BotonCerrar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 224.0
+offset_bottom = 145.0
+icon = ExtResource("23_gsnsj")
+flat = true
+expand_icon = true
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cc05i")
+}
+autoplay = "cerrar"
+
 [connection signal="pressed" from="Empezar" to="." method="_on_empezar_pressed"]
 [connection signal="pressed" from="BotonTabla" to="." method="_on_boton_tabla_pressed"]
-[connection signal="pressed" from="Buttonregresar" to="." method="_on_buttonregresar_pressed"]
 [connection signal="pressed" from="Botonbonus" to="." method="_on_botonbonus_pressed"]
+[connection signal="pressed" from="LabelConfirmacion/ButonSi" to="." method="_on_boton_si_pressed"]
+[connection signal="pressed" from="LabelConfirmacion/ButonNo" to="." method="_on_boton_no_pressed"]
+[connection signal="pressed" from="BotonCerrar" to="." method="_on_cerrar_sesion_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dcew6x5gjxhvt"]
+[gd_scene load_steps=29 format=3 uid="uid://dcew6x5gjxhvt"]
 
 [ext_resource type="Script" path="res://preguntasmodulos.gd" id="1_155ea"]
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="1_vt4us"]
@@ -7,12 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://cacplina1c256" path="res://Recursos/sprites/selectworld.png" id="4_uwqyy"]
 [ext_resource type="Texture2D" uid="uid://byiun5kjoohr2" path="res://Recursos/Botones/ISLAS/I2.png" id="5_qxq78"]
 [ext_resource type="Texture2D" uid="uid://b38u2unquyfs4" path="res://Recursos/Botones/ISLAS/I3.png" id="6_e0nik"]
+[ext_resource type="Texture2D" uid="uid://clrb6d8vupbd7" path="res://Recursos/Fondos/NUEVOSLAYERS/nubes/nubes1.png" id="7_r1wqo"]
 [ext_resource type="Texture2D" uid="uid://dc6qlo7c2ryou" path="res://Recursos/Botones/ISLAS/I41.png" id="7_xfvli"]
 [ext_resource type="Texture2D" uid="uid://cp5xb1lwkrwww" path="res://Recursos/Botones/ISLAS/I5.png" id="8_onqfo"]
+[ext_resource type="Texture2D" uid="uid://cq3s38tbhgvx0" path="res://Recursos/Fondos/NUEVOSLAYERS/nubes/nubes2.png" id="9_7lw7x"]
 [ext_resource type="Texture2D" uid="uid://kd1a83snd42i" path="res://Recursos/Botones/ISLAS/I6.png" id="9_ape0u"]
 [ext_resource type="Texture2D" uid="uid://ccp4m2ofkejc1" path="res://Recursos/Botones/ISLAS/I7.png" id="10_0l01q"]
 [ext_resource type="AudioStream" uid="uid://dlrfhdbmgi5yb" path="res://Recursos/audio/Rayman 2 - 1-13 - bonus level.mp3" id="11_12set"]
 [ext_resource type="Texture2D" uid="uid://vjy5c2l8t6bt" path="res://Recursos/Botones/ISLAS/I8.png" id="11_40vys"]
+[ext_resource type="Texture2D" uid="uid://doo8vx1qjyip4" path="res://Recursos/Fondos/NUEVOSLAYERS/nubes/nubes3.png" id="11_g40s2"]
 [ext_resource type="Texture2D" uid="uid://vokanwgk54w3" path="res://Recursos/sprites/nube.png" id="12_jm3is"]
 [ext_resource type="Texture2D" uid="uid://dvbajscus7jnt" path="res://Recursos/Botones/buttonaudion.png" id="15_7yjvb"]
 [ext_resource type="Texture2D" uid="uid://b2atketvutvfi" path="res://Recursos/Botones/BO/back.png" id="16_0hq84"]
@@ -218,7 +221,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 320.0
-offset_bottom = 10.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.694285, 0.991648)
@@ -281,6 +284,16 @@ icon = ExtResource("4_hnvf5")
 flat = true
 expand_icon = true
 
+[node name="Check" type="TextureRect" parent="ScrollContainer/TextureRect/BotonModulo1"]
+visible = false
+layout_mode = 0
+offset_left = 429.0
+offset_top = 175.0
+offset_right = 1070.0
+offset_bottom = 376.0
+texture = ExtResource("7_r1wqo")
+expand_mode = 1
+
 [node name="BotonModulo2" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
 offset_left = 536.626
@@ -291,6 +304,16 @@ scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(250, 205)
 icon = ExtResource("5_qxq78")
 flat = true
+
+[node name="Check" type="TextureRect" parent="ScrollContainer/TextureRect/BotonModulo2"]
+visible = false
+layout_mode = 0
+offset_left = -603.0
+offset_top = 289.0
+offset_right = 396.0
+offset_bottom = 787.0
+texture = ExtResource("9_7lw7x")
+expand_mode = 1
 
 [node name="BotonModulo3" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
@@ -303,6 +326,16 @@ pivot_offset = Vector2(250, 205)
 icon = ExtResource("6_e0nik")
 flat = true
 
+[node name="Check" type="TextureRect" parent="ScrollContainer/TextureRect/BotonModulo3"]
+visible = false
+layout_mode = 0
+offset_left = 94.0
+offset_top = 285.0
+offset_right = 1304.0
+offset_bottom = 591.0
+texture = ExtResource("11_g40s2")
+expand_mode = 1
+
 [node name="BotonModulo4" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
 offset_left = 537.243
@@ -313,6 +346,16 @@ scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(250, 205)
 icon = ExtResource("7_xfvli")
 flat = true
+
+[node name="Check" type="TextureRect" parent="ScrollContainer/TextureRect/BotonModulo4"]
+visible = false
+layout_mode = 0
+offset_left = -603.0
+offset_top = 289.0
+offset_right = 396.0
+offset_bottom = 787.0
+texture = ExtResource("9_7lw7x")
+expand_mode = 1
 
 [node name="BotonModulo5" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
@@ -325,6 +368,16 @@ pivot_offset = Vector2(250, 205)
 icon = ExtResource("8_onqfo")
 flat = true
 
+[node name="Check" type="TextureRect" parent="ScrollContainer/TextureRect/BotonModulo5"]
+visible = false
+layout_mode = 0
+offset_left = 94.0
+offset_top = 285.0
+offset_right = 1304.0
+offset_bottom = 591.0
+texture = ExtResource("11_g40s2")
+expand_mode = 1
+
 [node name="BotonModulo6" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
 offset_left = 540.124
@@ -336,6 +389,16 @@ pivot_offset = Vector2(250, 205)
 icon = ExtResource("9_ape0u")
 flat = true
 
+[node name="Check" type="TextureRect" parent="ScrollContainer/TextureRect/BotonModulo6"]
+visible = false
+layout_mode = 0
+offset_left = -603.0
+offset_top = 289.0
+offset_right = 396.0
+offset_bottom = 787.0
+texture = ExtResource("9_7lw7x")
+expand_mode = 1
+
 [node name="BotonModulo7" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
 offset_left = -39.5061
@@ -346,6 +409,16 @@ scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(250, 205)
 icon = ExtResource("10_0l01q")
 flat = true
+
+[node name="Check" type="TextureRect" parent="ScrollContainer/TextureRect/BotonModulo7"]
+visible = false
+layout_mode = 0
+offset_left = 94.0
+offset_top = 285.0
+offset_right = 1304.0
+offset_bottom = 591.0
+texture = ExtResource("11_g40s2")
+expand_mode = 1
 
 [node name="BotonModulo8" type="Button" parent="ScrollContainer/TextureRect" groups=["botones"]]
 layout_mode = 2
@@ -359,6 +432,7 @@ icon = ExtResource("11_40vys")
 flat = true
 
 [node name="Button" type="Button" parent="ScrollContainer/TextureRect"]
+visible = false
 layout_mode = 0
 offset_left = 895.886
 offset_top = 8.06738

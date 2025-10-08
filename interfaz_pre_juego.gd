@@ -14,6 +14,9 @@ extends Control
 @onready var laptop_intermedio = $TextureRect/laptop_intermedio
 @onready var laptop_adulto     = $TextureRect/laptop_adulto
 
+@onready var label_confirmacion = $LabelConfirmacion
+@onready var boton_si = $LabelConfirmacion/ButonSi
+@onready var boton_no = $LabelConfirmacion/ButonNo
 
 func _ready() -> void:
 	_ocultar_todas()
@@ -86,10 +89,17 @@ func _on_empezar_pressed() -> void:
 func _on_boton_tabla_pressed() -> void:
 	get_tree().change_scene_to_file("res://Ranking.tscn")
 
-
-func _on_buttonregresar_pressed() -> void:
-	get_tree().change_scene_to_file("res://login.tscn")
-
-
 func _on_botonbonus_pressed() -> void:
 	get_tree().change_scene_to_file("res://bonus_seleccion.tscn")
+
+
+func _on_cerrar_sesion_pressed():
+	label_confirmacion.visible = true
+	boton_si.visible = true
+	boton_no.visible = true
+func _on_boton_si_pressed():
+	get_tree().change_scene_to_file("res://Login.tscn")
+func _on_boton_no_pressed():
+	label_confirmacion.visible = false
+	boton_si.visible = false
+	boton_no.visible = false

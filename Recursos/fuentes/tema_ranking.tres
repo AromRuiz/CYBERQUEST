@@ -1,7 +1,11 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://pem3ae8anujf"]
 
-[ext_resource type="FontFile" uid="uid://c7168u6k4c7jj" path="res://Recursos/fuentes/kirifont/KiriFont.otf" id="1_2qv0m"]
+[ext_resource type="FontFile" uid="uid://h0lcg2ndmnti" path="res://Recursos/fuentes/Kenney Blocks.ttf" id="1_juaot"]
 
 [resource]
-default_font = ExtResource("1_2qv0m")
-default_font_size = 20
+default_font_size = 22
+Label/colors/font_color = Color(0, 0.96, 0.816, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/constants/outline_size = 10
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("1_juaot")

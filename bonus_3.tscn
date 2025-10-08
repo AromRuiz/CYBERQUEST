@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://1q2rtd4hmfqu"]
+[gd_scene load_steps=12 format=3 uid="uid://1q2rtd4hmfqu"]
 
 [ext_resource type="Texture2D" uid="uid://cjdnpf7owyvk4" path="res://Recursos/Fondos/NUEVOSLAYERS/fondowhack.png" id="1_5ugm6"]
 [ext_resource type="Script" path="res://bonus_3.gd" id="1_i7fnm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://gqme61plukyq" path="res://Recursos/Fondos/NUEVOSLAYERS/grass.png" id="3_5xx1u"]
 [ext_resource type="Texture2D" uid="uid://c0h0p68r43h4w" path="res://Recursos/Fondos/NUEVOSLAYERS/hole 1.png" id="4_8wa5j"]
 [ext_resource type="FontFile" uid="uid://c7168u6k4c7jj" path="res://Recursos/fuentes/kirifont/KiriFont.otf" id="6_icymi"]
+[ext_resource type="Texture2D" uid="uid://b2atketvutvfi" path="res://Recursos/Botones/BO/back.png" id="7_av5s7"]
 
 [sub_resource type="Animation" id="Animation_8qis6"]
 length = 0.001
@@ -160,5 +161,15 @@ offset_top = 44.0
 offset_right = 660.0
 offset_bottom = 127.0
 
+[node name="Button atras" type="Button" parent="."]
+offset_left = 1.112
+offset_top = 0.83222
+offset_right = 130.112
+offset_bottom = 90.8322
+icon = ExtResource("7_av5s7")
+flat = true
+expand_icon = true
+
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="ShowTimer" to="." method="_on_show_timer_timeout"]
+[connection signal="pressed" from="Button atras" to="." method="_on_button_atras_pressed"]

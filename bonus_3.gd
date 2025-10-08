@@ -133,3 +133,7 @@ func _on_puntaje_guardado(result: int, response_code: int, _headers, _body) -> v
 func _ir_a_resultado():
 	# Aquí cargas tu escena de resultados
 	get_tree().change_scene_to_file("res://extra_resultados.tscn")
+
+
+func _on_button_atras_pressed() -> void:
+	get_tree().change_scene_to_file("res://bonus_seleccion.tscn")

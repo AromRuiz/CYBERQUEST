@@ -53,6 +53,8 @@ func mostrar_estrellas(puntos: int):
 		anim_sad.show()
 	else:
 		anim_happy.show()
+		#2 o más estrellas sera completado
+		marcar_modulo_completado(JuegoState.modulo_actual)
 
 func calcular_estrellas(puntos: int) -> int:
 	if puntos >= 30:
@@ -62,3 +64,12 @@ func calcular_estrellas(puntos: int) -> int:
 	elif puntos >= 10:
 		return 1
 	return 0
+func marcar_modulo_completado(modulo_id: int):
+	var http = HTTPRequest.new()
+	add_child(http)
+	var url = "https://api-2-production-12c8.up.railway.app/modulo-completado"
+	var data = {
+		"id_usuario": JuegoState.id_usuario,
+		"modulo": modulo_id
+	}
+	http.request(url, ["Content-Type: application/json"], HTTPClient.METHOD_POST, JSON.stringify(data))

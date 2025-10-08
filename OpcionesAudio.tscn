@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://byfbcc0bqqw2e"]
+[gd_scene load_steps=8 format=3 uid="uid://byfbcc0bqqw2e"]
 
 [ext_resource type="Script" path="res://OpcionesAudio.gd" id="1_dlage"]
 [ext_resource type="Texture2D" uid="uid://8silrwusqju5" path="res://Recursos/Fondos/menudeopciones.png" id="2_1jais"]
 [ext_resource type="FontFile" uid="uid://dytmmui3r1ad4" path="res://Recursos/fuentes/kirifont/KiriFont.ttf" id="3_q42kd"]
 [ext_resource type="Script" path="res://music_slider.gd" id="4_itecy"]
+[ext_resource type="Script" path="res://sfx_slider.gd" id="5_g6hdf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_no4kh"]
 font = ExtResource("3_q42kd")
@@ -69,6 +70,12 @@ offset_left = 246.0
 offset_top = 206.0
 offset_right = 589.0
 offset_bottom = 222.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("5_g6hdf")
+audio_bus_name = "SFX"
 
 [connection signal="pressed" from="TextureRect/Cerrar" to="." method="_on_cerrar_pressed"]
 [connection signal="value_changed" from="TextureRect/MusicSlider" to="TextureRect/MusicSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="TextureRect/SFXSlider" to="TextureRect/SFXSlider" method="_on_value_changed"]
