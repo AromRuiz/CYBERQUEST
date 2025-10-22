@@ -21,7 +21,9 @@ func _on_register_button_pressed():
 	if user.is_empty() or password.is_empty():
 		_show_error("Completa ambos campos.")
 		return
-
+	if not _is_valid_password(password):
+		_show_error("La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número.")
+		return
 	var body = {
 		"user": user,
 		"pass": password
@@ -35,6 +37,24 @@ func _on_register_button_pressed():
 		HTTPClient.METHOD_POST,
 		json_data.to_utf8_buffer()
 	)
+
+func _is_valid_password(password: String) -> bool:
+	if password.length() < 8:
+		return false
+	var has_uppercase = false
+	var has_lowercase = false
+	var has_digit = false
+	for i in password.length():
+		var c = password[i]
+		var code = c.unicode_at(0)
+
+		if code >= 65 and code <= 90: # A-Z
+			has_uppercase = true
+		elif code >= 97 and code <= 122: # a-z
+			has_lowercase = true
+		elif code >= 48 and code <= 57: # 0-9
+			has_digit = true
+	return has_uppercase and has_lowercase and has_digit
 
 func _on_request_completed(result, response_code, headers, body):
 	if response_code != 200:

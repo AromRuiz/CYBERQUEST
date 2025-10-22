@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://1q2rtd4hmfqu"]
+[gd_scene load_steps=13 format=3 uid="uid://1q2rtd4hmfqu"]
 
 [ext_resource type="Texture2D" uid="uid://cjdnpf7owyvk4" path="res://Recursos/Fondos/NUEVOSLAYERS/fondowhack.png" id="1_5ugm6"]
 [ext_resource type="Script" path="res://bonus_3.gd" id="1_i7fnm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c0h0p68r43h4w" path="res://Recursos/Fondos/NUEVOSLAYERS/hole 1.png" id="4_8wa5j"]
 [ext_resource type="FontFile" uid="uid://c7168u6k4c7jj" path="res://Recursos/fuentes/kirifont/KiriFont.otf" id="6_icymi"]
 [ext_resource type="Texture2D" uid="uid://b2atketvutvfi" path="res://Recursos/Botones/BO/back.png" id="7_av5s7"]
+[ext_resource type="PackedScene" uid="uid://ctmy0jp78rjhd" path="res://sonido.tscn" id="8_a76tl"]
 
 [sub_resource type="Animation" id="Animation_8qis6"]
 length = 0.001
@@ -162,6 +163,7 @@ offset_right = 660.0
 offset_bottom = 127.0
 
 [node name="Button atras" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1.112
 offset_top = 0.83222
 offset_right = 130.112
@@ -169,6 +171,13 @@ offset_bottom = 90.8322
 icon = ExtResource("7_av5s7")
 flat = true
 expand_icon = true
+
+[node name="SONIDO" parent="." instance=ExtResource("8_a76tl")]
+layout_mode = 1
+offset_left = 589.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = -1172.0
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="ShowTimer" to="." method="_on_show_timer_timeout"]

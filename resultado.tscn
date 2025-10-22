@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c475epjrtcusw"]
+[gd_scene load_steps=22 format=3 uid="uid://c475epjrtcusw"]
 
 [ext_resource type="Script" path="res://resultado.gd" id="1_hc02v"]
 [ext_resource type="Texture2D" uid="uid://b4rsvu3rt2hv1" path="res://Recursos/Fondos/06869317-8b23-46b8-b45b-5b3f034e277a.png" id="2_gg7gs"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dga6q2eiwrq72" path="res://Recursos/Botones/BO/Menubuton.png" id="7_ait6a"]
 [ext_resource type="Texture2D" uid="uid://blb7wh6aw5cmi" path="res://Recursos/sprites/9432df3a-1675-4824-9fa8-78f755dcd038.png" id="7_rhfq1"]
 [ext_resource type="AudioStream" uid="uid://duc3ullmd8rot" path="res://Recursos/audio/Crash Bandicoot 1 - Tawna Bonus Round Music.mp3" id="8_qtxl0"]
+[ext_resource type="PackedScene" uid="uid://ctmy0jp78rjhd" path="res://sonido.tscn" id="10_q5mqt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_unnru"]
 font = ExtResource("3_m817a")
@@ -227,6 +228,7 @@ autoplay = "default"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_qtxl0")
 autoplay = true
+bus = &"Music"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -240,3 +242,10 @@ position = Vector2(384, 600)
 sprite_frames = SubResource("SpriteFrames_fxbrh")
 autoplay = "default"
 frame_progress = 0.637072
+
+[node name="SONIDO" parent="." instance=ExtResource("10_q5mqt")]
+layout_mode = 1
+offset_left = 530.0
+offset_top = 23.0
+offset_right = -55.0
+offset_bottom = -1153.0

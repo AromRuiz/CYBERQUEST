@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://clewcvaugtf1d"]
+[gd_scene load_steps=11 format=3 uid="uid://clewcvaugtf1d"]
 
 [ext_resource type="Script" path="res://Scripts/login.gd" id="1_ypwye"]
 [ext_resource type="Texture2D" uid="uid://tdotsof8n4su" path="res://Recursos/Fondos/Cyber.jpg" id="2_2aqbx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cqk1n716uhfjf" path="res://Recursos/Botones/BO/BIN.png" id="7_x6lip"]
 [ext_resource type="AudioStream" uid="uid://5y4vebiccrei" path="res://Recursos/audio/[OST] Super Mario Maker - Title Screen.mp3" id="8_8llh0"]
 [ext_resource type="Texture2D" uid="uid://dgp3oli0b3o3h" path="res://Recursos/Botones/BO/BR.png" id="8_ltpdf"]
+[ext_resource type="PackedScene" uid="uid://ctmy0jp78rjhd" path="res://sonido.tscn" id="10_5oq10"]
 
 [node name="Login" type="Control"]
 layout_mode = 3
@@ -140,9 +141,17 @@ offset_bottom = 312.798
 stream = ExtResource("8_8llh0")
 volume_db = -22.516
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="SONIDO" parent="." instance=ExtResource("10_5oq10")]
+layout_mode = 1
+offset_left = 574.0
+offset_top = 7.0
+offset_right = 15.0
+offset_bottom = -1165.0
 
 [connection signal="pressed" from="TextureRect/LoginButton" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="TextureRect/RegisterButton" to="." method="_on_register_button_pressed"]

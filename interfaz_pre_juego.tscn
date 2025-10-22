@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://c0xce73amgrq3"]
+[gd_scene load_steps=66 format=3 uid="uid://c0xce73amgrq3"]
 
 [ext_resource type="Script" path="res://interfaz_pre_juego.gd" id="1_4m82r"]
 [ext_resource type="Texture2D" uid="uid://blb7wh6aw5cmi" path="res://Recursos/sprites/9432df3a-1675-4824-9fa8-78f755dcd038.png" id="2_1k0yh"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dr5ra8welr15o" path="res://Recursos/Botones/BO/botonaceptar.png" id="21_fwtof"]
 [ext_resource type="Texture2D" uid="uid://cuk1ljwud7jwt" path="res://Recursos/Botones/BO/botonno.png" id="22_lh8hg"]
 [ext_resource type="Texture2D" uid="uid://bi1ci7x707k0m" path="res://Recursos/Botones/BO/botoncerrar.png" id="23_gsnsj"]
+[ext_resource type="PackedScene" uid="uid://ctmy0jp78rjhd" path="res://sonido.tscn" id="24_eweiw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_836o2"]
 atlas = ExtResource("2_1k0yh")
@@ -541,6 +542,7 @@ expand_icon = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_ox1wb")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -606,6 +608,13 @@ libraries = {
 "": SubResource("AnimationLibrary_cc05i")
 }
 autoplay = "cerrar"
+
+[node name="SONIDO" parent="." instance=ExtResource("24_eweiw")]
+layout_mode = 1
+offset_left = 591.0
+offset_top = 151.0
+offset_right = 6.0
+offset_bottom = -1025.0
 
 [connection signal="pressed" from="Empezar" to="." method="_on_empezar_pressed"]
 [connection signal="pressed" from="BotonTabla" to="." method="_on_boton_tabla_pressed"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctmy0jp78rjhd"]
+
+[ext_resource type="Script" path="res://SONIDO.gd" id="1_nrb1d"]
+[ext_resource type="Texture2D" uid="uid://dvbajscus7jnt" path="res://Recursos/Botones/buttonaudion.png" id="2_tluca"]
+
+[node name="SONIDO" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_right = -568.0
+offset_bottom = -1176.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nrb1d")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 134.0
+offset_bottom = 104.0
+icon = ExtResource("2_tluca")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
